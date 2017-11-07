@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+start-state="main">
+
+
+
+    <view-state id="main" view="/WEB-INF/views/main.xhtml">
+
+        <var name="userPage" class="com.planrest.services.UserService"/>
+
+        <on-render>
+            <evaluate expression="userDAOImpl.getUniqueById(1)"
+                      result="viewScope.user" result-type="com.planrest.entities.User"/>
+            <set name="userService.user" value="user"/>
+
+            <evaluate expression="userDAOImpl.getFriendsByUserId(user.id)"
+                      result="viewScope.allFriends"/>
+
+            <evaluate expression="userWallDAOImpl.getUserwallRestaurantwallByUserId(user.id)"
+                      result="viewScope.userwallRestaurantwall"/>
+            <set name="userService.userwallRestaurantwall" value="userwallRestaurantwall"/>
+
+            <evaluate expression="userLocationDAOImpl.getUserLocationByUserId(user.id)"
+                      result="viewScope.userLocation" result-type="com.planrest.entities.Userlocation"/>
+            
+            <evaluate expression="userRatingDAOImpl.getAverageRatingByUserId(user.id)"
+                      result="viewScope.averageRating" result-type="double"/>
+        </on-render>
+
+        <transition on="toFriend" to="friend">
+            <set name="flowScope.friend" value="userPage.user"/>
+        </transition>
+
+        <transition on="toRestaurant" to="restaurant">
+            <set name="flowScope.restaurant" value="userPage.restaurant"/>
+        </transition>
+
+    </view-state>
+
+
+    <view-state id="friend" view="/WEB-INF/views/main.xhtml">
+
+        <var name="userPage" class="com.planrest.services.UserService"/>
+
+        <on-render>
+            <set name="viewScope.user" value="friend"/>
+            <set name="userService.user" value="user"/>
+
+            <evaluate expression="userDAOImpl.getFriendsByUserId(friend.id)"
+                      result="viewScope.allFriends"/>
+
+            <evaluate expression="userWallDAOImpl.getUserwallRestaurantwallByUserId(friend.id)"
+                      result="viewScope.userwallRestaurantwall"/>
+            <set name="userService.userwallRestaurantwall" value="userwallRestaurantwall"/>
+
+            <evaluate expression="userLocationDAOImpl.getUserLocationByUserId(friend.id)"
+                      result="viewScope.userLocation" result-type="com.planrest.entities.Userlocation"/>
+
+            <evaluate expression="userRatingDAOImpl.getAverageRatingByUserId(friend.id)"
+                      result="viewScope.averageRating" result-type="double"/>
+
+        </on-render>
+
+        <transition on="toFriend" to="friend">
+            <set name="flowScope.friend" value="userPage.user"/>
+        </transition>
+
+        <transition on="toRestaurant" to="restaurant">
+            <set name="flowScope.restaurant" value="userPage.restaurant"/>
+        </transition>
+
+        <transition on="toMain" to="main"/>
+
+    </view-state>
+
+    <view-state id="restaurant" view="/WEB-INF/views/restaurant.xhtml">
+
+        <var name="userPage" class="com.planrest.services.UserService"/>
+
+        <on-render>
+
+            <set name="userService.restaurant" value="restaurant"/>
+
+            <!--<evaluate expression="userDAOImpl.getFriendsByUserId(restaurant.id)"-->
+                      <!--result="viewScope.allFriends"/>-->
+
+            <evaluate expression="restaurantWallDAOImpl.getUserwallRestaurantwallByRestaurantId(restaurant.id)"
+                      result="viewScope.userwallRestaurantwall"/>
+            <set name="userService.userwallRestaurantwall" value="userwallRestaurantwall"/>
+
+            <evaluate expression="restaurantTypeDAOImpl.getRestaurantTypeByRestaurantId(restaurant.id)"
+                      result="viewScope.restaurantType" result-type="com.planrest.entities.Restauranttype"/>
+
+            <evaluate expression="restaurantLocationDAOImpl.getRestaurantLocationByRestaurantId(restaurant.id)"
+                      result="viewScope.restaurantLocation" result-type="com.planrest.entities.Restaurantlocation"/>
+
+            <evaluate expression="restaurantRatingDAOImpl.getAverageRestaurantRatingByRestaurantId(restaurant.id)"
+                      result="viewScope.averageRating" result-type="double"/>
+
+        </on-render>
+
+    </view-state>
+
+</flow>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+
+<ui:composition template="/WEB-INF/templates/restaurant/restaurantPage.xhtml">
+
+    <ui:define name="title">
+        _PlanRest_
+    </ui:define>
+
+    <ui:define name="content">
+
+
+        <h:form id="booksForm" >
+
+
+            <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${userwallRestaurantwall}"  id="booksList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
+                        rowsPerPageTemplate="4,10,20" paginatorTemplate="{RowsPerPageDropdown} {PageLinks}"  paginatorAlwaysVisible="true" emptyMessage="">
+
+
+                <div class="item">
+
+                    <div class="comment">
+
+                        <span><strong>#{b.userWallId.date}</strong></span>
+                        <p style="margin: 5px;"> #{b.userWallId.comment}</p>
+                    </div>
+
+                    <div class="info">
+
+                        <h:outputLink styleClass="content_link" target="_blank">
+                            <p:graphicImage value="/ShowImage?index=#{rowIndex}&amp;type=restaurant" width="690px" height="100%"/>
+                        </h:outputLink>
+
+                    </div>
+
+                </div>
+
+                <hr align="center" width="100%" size="2"/>
+
+            </p:dataGrid>
+
+        </h:form>
+
+    </ui:define>
+
+    <ui:define name="books_count">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="booksCount" value="#{msg.restaurant_posts_count}  #{userwallRestaurantwall.size()}" /></h1>
+
+            <h:form id="add-action">
+                <p:commandLink >
+                    <h:outputText value="#{msg.add_post}" title="#{msg.add_post}"/>
+                </p:commandLink>
+            </h:form>
+
+        </div>
+
+        <hr align="center" width="100%" size="2"/>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>
