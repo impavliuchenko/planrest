@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface UserWallDAO extends CrudDAO <Userwall, Integer>{
     List<UserwallRestaurantwall> getUserWallPostsByUserId(int id);
-    List<UserwallRestaurantwall> getUserwallRestaurantwallByUserId(int id);
+    List<UserwallRestaurantwall> getUserwallRestaurantwallsByUserId(int id);
 }

@@ -17,10 +17,10 @@
     <ui:define name="content">
 
 
-        <h:form id="booksForm" >
 
 
-            <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${userwallRestaurantwall}"  id="booksList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
+
+            <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${restaurantWalls}"  id="booksList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
                         rowsPerPageTemplate="4,10,20" paginatorTemplate="{RowsPerPageDropdown} {PageLinks}"  paginatorAlwaysVisible="true" emptyMessage="">
 
 
@@ -28,15 +28,30 @@
 
                     <div class="comment">
 
-                        <span><strong>#{b.userWallId.date}</strong></span>
-                        <p style="margin: 5px;"> #{b.userWallId.comment}</p>
+                        <span><strong>#{b.date}</strong></span>
+                        <p style="margin: 5px;"> #{b.comment}</p>
                     </div>
 
                     <div class="info">
 
+                        <h:form id="booksForm" styleClass="search_form" >
+
                         <h:outputLink styleClass="content_link" target="_blank">
-                            <p:graphicImage value="/ShowImage?index=#{rowIndex}&amp;type=restaurant" width="690px" height="100%"/>
+                            <p:graphicImage value="/ShowRestaurantPageImage?index=#{rowIndex}" width="690px" height="100%"/>
                         </h:outputLink>
+
+                        <h:inputText  id="search_string" value="#{restaurantPageComponent.repostComment}" styleClass="restaurant-wall-send-comment"/>
+
+                        <h:commandButton id="btnSearch" value="#{msg.repost}" styleClass="button" action="repost">
+                            <f:setPropertyActionListener value="#{b}" target="#{restaurantPage.restaurantRepostingWall}"/>
+                        </h:commandButton>
+
+                        <script language="javascript">
+                            document.getElementById("search_form:search_string").setAttribute("placeholder","#{msg.search_rest}");
+                        </script>
+
+                        </h:form>
+
 
                     </div>
 
@@ -46,7 +61,7 @@
 
             </p:dataGrid>
 
-        </h:form>
+
 
     </ui:define>
 
@@ -54,7 +69,7 @@
 
         <div class="box-sh">
 
-            <h1><p:outputLabel id="booksCount" value="#{msg.restaurant_posts_count}  #{userwallRestaurantwall.size()}" /></h1>
+            <h1><p:outputLabel id="booksCount" value="#{msg.restaurant_posts_count}  #{restaurantWalls.size()}" /></h1>
 
             <h:form id="add-action">
                 <p:commandLink >

@@ -6,5 +6,5 @@ import com.planrest.entities.UserwallRestaurantwall;
 import java.util.List;
 
 public interface RestaurantWallDAO extends CrudDAO<Restaurantwall, Integer> {
-    List<UserwallRestaurantwall> getUserwallRestaurantwallByRestaurantId(int id);
+    List<Restaurantwall> getRestaurantWallsByRestaurantId(int id);
 }

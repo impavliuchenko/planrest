@@ -30,12 +30,12 @@ public class UserWallDAOImpl extends CrudDAOImpl<Userwall, Integer> implements S
     }
 
     @Override
-    public List<UserwallRestaurantwall> getUserwallRestaurantwallByUserId(int id) {
+    public List<UserwallRestaurantwall> getUserwallRestaurantwallsByUserId(int id) {
         Query query = sessionFactory.getCurrentSession()
                 .createQuery("SELECT uwrw FROM UserwallRestaurantwall uwrw " +
                         "INNER JOIN uwrw.userWallId uw " +
                         "INNER JOIN uw.userId u " +
-                        "WHERE u.id = :id");
+                        "WHERE u.id = :id ORDER BY uw.date DESC");
         query.setParameter("id", id);
         return (List<UserwallRestaurantwall>) query.list();
     }

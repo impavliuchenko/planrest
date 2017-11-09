@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+
+<ui:composition template="/WEB-INF/templates/restaurant/restaurantPage.xhtml">
+
+    <ui:define name="title">
+        _PlanRest_
+    </ui:define>
+
+    <ui:define name="content">
+
+
+
+
+
+            <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${restaurantWalls}"  id="booksList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
+                        rowsPerPageTemplate="4,10,20" paginatorTemplate="{RowsPerPageDropdown} {PageLinks}"  paginatorAlwaysVisible="true" emptyMessage="">
+
+
+                <div class="item">
+
+                    <div class="comment">
+
+                        <span><strong>#{b.date}</strong></span>
+                        <p style="margin: 5px;"> #{b.comment}</p>
+                    </div>
+
+                    <div class="info">
+
+                        <h:form id="booksForm" styleClass="search_form" >
+
+                        <h:outputLink styleClass="content_link" target="_blank">
+                            <p:graphicImage value="/ShowRestaurantPageImage?index=#{rowIndex}" width="690px" height="100%"/>
+                        </h:outputLink>
+
+                        <h:inputText  id="search_string" value="#{restaurantPageComponent.repostComment}" styleClass="restaurant-wall-send-comment"/>
+
+                        <h:commandButton id="btnSearch" value="#{msg.repost}" styleClass="button" action="repost">
+                            <f:setPropertyActionListener value="#{b}" target="#{restaurantPage.restaurantRepostingWall}"/>
+                        </h:commandButton>
+
+                        <script language="javascript">
+                            document.getElementById("search_form:search_string").setAttribute("placeholder","#{msg.search_rest}");
+                        </script>
+
+                        <!--<h:commandLink id="repost" value="REPOST" action="repost">-->
+                            <!--<f:setPropertyActionListener value="#{b}" target="#{restaurantPage.restaurantRepostingWall}"/>-->
+                        <!--</h:commandLink>-->
+                        </h:form>
+
+
+                    </div>
+
+                </div>
+
+                <hr align="center" width="100%" size="2"/>
+
+            </p:dataGrid>
+
+
+
+    </ui:define>
+
+    <ui:define name="books_count">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="booksCount" value="#{msg.restaurant_posts_count}  #{restaurantWalls.size()}" /></h1>
+
+            <h:form id="add-action">
+                <p:commandLink >
+                    <h:outputText value="#{msg.add_post}" title="#{msg.add_post}"/>
+                </p:commandLink>
+            </h:form>
+
+        </div>
+
+        <hr align="center" width="100%" size="2"/>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

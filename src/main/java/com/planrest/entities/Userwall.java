@@ -16,6 +16,7 @@ public class Userwall implements Serializable {
     private Collection<UserwallRestaurantwall> userwallRestaurantwallsById;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

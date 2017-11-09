@@ -16,13 +16,12 @@ public class RestaurantWallDAOImpl extends CrudDAOImpl<Restaurantwall, Integer> 
     private static final long serialVersionUID = 1L;
 
     @Override
-    public List<UserwallRestaurantwall> getUserwallRestaurantwallByRestaurantId(int id) {
+    public List<Restaurantwall> getRestaurantWallsByRestaurantId(int id) {
         Query query = sessionFactory.getCurrentSession()
-                .createQuery("SELECT uwrw FROM UserwallRestaurantwall uwrw " +
-                        "INNER JOIN uwrw.restaurantWallId rw " +
+                .createQuery("SELECT rw FROM Restaurantwall rw " +
                         "INNER JOIN rw.restaurantId r " +
-                        "WHERE r.id = :id");
+                        "WHERE r.id = :id ORDER BY rw.date DESC");
         query.setParameter("id", id);
-        return (List<UserwallRestaurantwall>) query.list();
+        return (List<Restaurantwall>) query.list();
     }
 }
