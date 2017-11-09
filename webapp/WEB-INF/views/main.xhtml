@@ -16,13 +16,15 @@
 
     <ui:define name="content">
 
-        <h:form id="booksForm" >
+        <div class="item">
 
-            <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${userwallRestaurantwalls}"  id="booksList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
+        <h:form id="postsForm">
+
+            <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${userwallRestaurantwalls}"  id="postsList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
                         rowsPerPageTemplate="4,10,20" paginatorTemplate="{RowsPerPageDropdown} {PageLinks}"  paginatorAlwaysVisible="true" emptyMessage="">
 
 
-                <div class="item">
+
 
                     <div class="comment">
 
@@ -54,26 +56,33 @@
 
                     </div>
 
-                </div>
+
 
                 <hr align="center" width="100%" size="2"/>
 
             </p:dataGrid>
 
         </h:form>
+        </div>
 
     </ui:define>
 
     <ui:define name="books_count">
 
         <div class="box-sh">
+            <h:form id="postTypes">
 
-            <h1><p:outputLabel id="booksCount" value="#{msg.posts_count}  #{userwallRestaurantwalls.size()}" /></h1>
+                <h1>
+                    <p:commandButton id="donePosts" value="Done" action="donePosts" styleClass="post-types-button">
+                        <!--<f:ajax execute="@form" render=":postsForm:postsList"/>-->
+                    </p:commandButton>
+                    <p:outputLabel id="donePostsCount" value=" (#{userWallRestaurantWallsDoneCount})  " />
 
-            <h:form id="add-action">
-                <p:commandLink >
-                    <h:outputText value="#{msg.add_post}" title="#{msg.add_post}"/>
-                </p:commandLink>
+                    <p:commandButton id="planPosts" value="Plan" action="planPosts" styleClass="post-types-button">
+
+                    </p:commandButton>
+                    <p:outputLabel id="planPostsCount" value=" (#{userWallRestaurantWallsPlanCount})" />
+                </h1>
             </h:form>
 
         </div>

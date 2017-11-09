@@ -135,12 +135,12 @@ body {
 
 .right-content { float: left; border-left: 1px solid #e5e5e5; width: 759px; min-height: 925px; padding-bottom: 34px;}
 .box-sh {padding-right: 40px; overflow: hidden; }
-.box-sh h1 {float: left; color: #7f7f7f; font-size: 30px; margin-left: 39px; margin-top: 28px;}
-.box-sh a {margin-top: 25px; float: right; background: #d5c39d; padding: 10px 15px 10px 15px; border-radius: 5px; margin-left: 6px; font-size: 14px; color: #fff; text-decoration: none;}
+.box-sh h1 {float: left; color: #7f7f7f; font-size: 30px;}
+.post-types-button {margin-top: 8px; background: #d5c39d; padding: 10px 15px 10px 15px; border-radius: 5px; margin-left: 6px; font-size: 14px; text-decoration: none;}
 
 .item { height:100%; width: 100%; padding-top: 18px; padding-bottom: 18px; overflow: hidden; float: left; }
 .item img {float: left; margin-top: 4px;margin-bottom: 10px;}
-.item .info {overflow: hidden; padding-left: 30px;}
+.item .info {overflow: hidden; padding-left: 30px; padding-right: 32px;}
 .item .book_name td {padding: 12px; font-size: 14px}
 .item .info .title {color: #1091c6; font-size: 18px;}
 .item .info .title:hover {text-decoration: none;}

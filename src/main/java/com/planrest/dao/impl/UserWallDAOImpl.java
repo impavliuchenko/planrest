@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Transactional
@@ -29,14 +31,4 @@ public class UserWallDAOImpl extends CrudDAOImpl<Userwall, Integer> implements S
         return null;
     }
 
-    @Override
-    public List<UserwallRestaurantwall> getUserwallRestaurantwallsByUserId(int id) {
-        Query query = sessionFactory.getCurrentSession()
-                .createQuery("SELECT uwrw FROM UserwallRestaurantwall uwrw " +
-                        "INNER JOIN uwrw.userWallId uw " +
-                        "INNER JOIN uw.userId u " +
-                        "WHERE u.id = :id ORDER BY uw.date DESC");
-        query.setParameter("id", id);
-        return (List<UserwallRestaurantwall>) query.list();
-    }
 }

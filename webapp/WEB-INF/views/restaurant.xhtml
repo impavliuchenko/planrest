@@ -69,12 +69,23 @@
 
         <div class="box-sh">
 
-            <h1><p:outputLabel id="booksCount" value="#{msg.restaurant_posts_count}  #{restaurantWalls.size()}" /></h1>
+            <h:form id="postTypes">
 
-            <h:form id="add-action">
-                <p:commandLink >
-                    <h:outputText value="#{msg.add_post}" title="#{msg.add_post}"/>
-                </p:commandLink>
+                <h1>
+                    <p:commandButton id="donePosts" value="Done" action="donePosts" styleClass="post-types-button">
+                        <!--<f:ajax execute="@form" render=":postsForm:postsList"/>-->
+                    </p:commandButton>
+
+                    <p:outputLabel id="donePostsCount" value=" (#{restaurantWallsDoneCount})  " />
+
+                    <p:commandButton id="planPosts" value="Plan" action="planPosts" styleClass="post-types-button">
+                    </p:commandButton>
+
+                    <p:outputLabel id="planPostsCount" value=" (#{restaurantWallsPlanCount})" />
+                </h1>
+
+                <p:commandButton value="#{msg.add_post}" styleClass="post-types-button" style="float: right"/>
+
             </h:form>
 
         </div>

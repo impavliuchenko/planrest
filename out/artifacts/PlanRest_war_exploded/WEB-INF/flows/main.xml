@@ -10,7 +10,7 @@ start-state="main">
 
         <var name="userPage" class="com.planrest.objects.UserPageComponent"/>
 
-        <on-render>
+        <on-entry>
             <evaluate expression="userDAOImpl.getUniqueById(1)"
                       result="viewScope.user" result-type="com.planrest.entities.User"/>
             <set name="userPageComponent.user" value="user"/>
@@ -19,16 +19,22 @@ start-state="main">
             <evaluate expression="userDAOImpl.getFriendsByUserId(user.id)"
                       result="viewScope.allFriends"/>
 
-            <evaluate expression="userWallDAOImpl.getUserwallRestaurantwallsByUserId(user.id)"
+            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+
+            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserIdCount(user.id)"
+                      result="viewScope.userWallRestaurantWallsDoneCount" result-type="long"/>
+
+            <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserIdCount(user.id)"
+                      result="viewScope.userWallRestaurantWallsPlanCount" result-type="long"/>
 
             <evaluate expression="userLocationDAOImpl.getUserLocationByUserId(user.id)"
                       result="viewScope.userLocation" result-type="com.planrest.entities.Userlocation"/>
             
             <evaluate expression="userRatingDAOImpl.getAverageRatingByUserId(user.id)"
                       result="viewScope.averageRating" result-type="double"/>
-        </on-render>
+        </on-entry>
 
         <transition on="toFriend" to="friend">
             <set name="flowScope.friend" value="userPage.user"/>
@@ -38,29 +44,48 @@ start-state="main">
             <set name="flowScope.restaurant" value="userPage.restaurant"/>
         </transition>
 
-        <transition on="delete">
+        <transition on="delete" to="main">
             <set name="viewScope.userWallId" value="userPage.userWallId"/>
             <set name="viewScope.userWallRestaurantWallId" value="userPage.userWallRestaurantWallId"/>
             <evaluate expression="userWallService.deleteUserWallbyUserWallIdAndRestaurantWallId(userWallId, userWallRestaurantWallId)"/>
         </transition>
 
-    </view-state>
+        <transition on="donePosts">
+            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(user.id)"
+                      result="viewScope.userwallRestaurantwalls"/>
+            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <render fragments="item"/>
+        </transition>
 
+        <transition on="planPosts">
+            <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserId(user.id)"
+                      result="viewScope.userwallRestaurantwalls"/>
+            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <render fragments="item"/>
+        </transition>
+
+    </view-state>
 
     <view-state id="friend" view="/WEB-INF/views/main.xhtml">
 
         <var name="userPage" class="com.planrest.objects.UserPageComponent"/>
 
-        <on-render>
+        <on-entry>
             <set name="viewScope.user" value="friend"/>
             <set name="userPageComponent.user" value="user"/>
 
             <evaluate expression="userDAOImpl.getFriendsByUserId(friend.id)"
                       result="viewScope.allFriends"/>
 
-            <evaluate expression="userWallDAOImpl.getUserwallRestaurantwallsByUserId(friend.id)"
+            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+
+            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserIdCount(user.id)"
+                      result="viewScope.userWallRestaurantWallsDoneCount" result-type="long"/>
+
+            <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserIdCount(user.id)"
+                      result="viewScope.userWallRestaurantWallsPlanCount" result-type="long"/>
 
             <evaluate expression="userLocationDAOImpl.getUserLocationByUserId(friend.id)"
                       result="viewScope.userLocation" result-type="com.planrest.entities.Userlocation"/>
@@ -68,7 +93,7 @@ start-state="main">
             <evaluate expression="userRatingDAOImpl.getAverageRatingByUserId(friend.id)"
                       result="viewScope.averageRating" result-type="double"/>
 
-        </on-render>
+        </on-entry>
 
         <transition on="toFriend" to="friend">
             <set name="flowScope.friend" value="userPage.user"/>
@@ -80,19 +105,39 @@ start-state="main">
 
         <transition on="toMain" to="main"/>
 
+        <transition on="donePosts">
+            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(friend.id)"
+                      result="viewScope.userwallRestaurantwalls"/>
+            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <render fragments="item"/>
+        </transition>
+
+        <transition on="planPosts">
+            <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserId(friend.id)"
+                      result="viewScope.userwallRestaurantwalls"/>
+            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <render fragments="item"/>
+        </transition>
+
     </view-state>
 
     <view-state id="restaurant" view="/WEB-INF/views/restaurant.xhtml">
 
         <var name="restaurantPage" class="com.planrest.objects.RestaurantPageComponent"/>
 
-        <on-render>
+        <on-entry>
 
             <set name="restaurantPageComponent.restaurant" value="restaurant"/>
 
-            <evaluate expression="restaurantWallDAOImpl.getRestaurantWallsByRestaurantId(restaurant.id)"
+            <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
             <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+
+            <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantIdCount(restaurant.id)"
+                      result="viewScope.restaurantWallsDoneCount" result-type="long"/>
+
+            <evaluate expression="restaurantWallService.getRestaurantWallsPlanByRestaurantIdCount(restaurant.id)"
+                      result="viewScope.restaurantWallsPlanCount" result-type="long"/>
 
             <evaluate expression="restaurantTypeDAOImpl.getRestaurantTypeByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantType" result-type="com.planrest.entities.Restauranttype"/>
@@ -103,7 +148,7 @@ start-state="main">
             <evaluate expression="restaurantRatingDAOImpl.getAverageRestaurantRatingByRestaurantId(restaurant.id)"
                       result="viewScope.averageRating" result-type="double"/>
 
-        </on-render>
+        </on-entry>
 
         <transition on="toMain" to="main"/>
 
@@ -115,6 +160,20 @@ start-state="main">
             <set name="viewScope.restaurantRepostingWall" value="restaurantPage.restaurantRepostingWall"/>
             <set name="viewScope.repostComment" value="restaurantPageComponent.repostComment"/>
             <evaluate expression="userWallService.addUserWallByRestaurantWall(restaurantRepostingWall, userName, repostComment)"/>
+        </transition>
+
+        <transition on="donePosts">
+            <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantId(restaurant.id)"
+                      result="viewScope.restaurantWalls"/>
+            <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+            <render fragments="item"/>
+        </transition>
+
+        <transition on="planPosts">
+            <evaluate expression="restaurantWallService.getRestaurantWallsPlanByRestaurantId(restaurant.id)"
+                      result="viewScope.restaurantWalls"/>
+            <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+            <render fragments="item"/>
         </transition>
 
     </view-state>
