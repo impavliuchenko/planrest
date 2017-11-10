@@ -19,6 +19,7 @@ public class RestaurantPageComponent implements Serializable{
     private Restaurantwall restaurantRepostingWall;
     private List<Restaurantwall> restaurantWalls;
     private String repostComment;
+    private int restaurantWallId;
 
     public User getUser() {
         return user;
@@ -66,5 +67,13 @@ public class RestaurantPageComponent implements Serializable{
 
     public void setRepostComment(String repostComment) {
         this.repostComment = repostComment;
+    }
+
+    public int getRestaurantWallId() {
+        return restaurantWallId;
+    }
+
+    public void setRestaurantWallId(int restaurantWallId) {
+        this.restaurantWallId = restaurantWallId;
     }
 }

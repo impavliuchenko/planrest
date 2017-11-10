@@ -4,8 +4,6 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
 start-state="main">
 
-
-
     <view-state id="main" view="/WEB-INF/views/main.xhtml">
 
         <var name="userPage" class="com.planrest.objects.UserPageComponent"/>
@@ -54,14 +52,21 @@ start-state="main">
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
-            <render fragments="item"/>
+            <!--<render fragments="yo"/>-->
         </transition>
 
         <transition on="planPosts">
             <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
-            <render fragments="item"/>
+        </transition>
+
+        <transition on="showVisitors">
+            <set name="viewScope.restaurantWallId" value="userPage.restaurantWallId"/>
+            <evaluate expression="userDAOImpl.getUsersByRestaurantWallId(restaurantWallId)"
+                      result="viewScope.restaurantWallUsers"/>
+            <evaluate expression="userWallService.splitDialog()"/>
+            <!--<render fragments="restaurantPostsForm:splitDialog"/>-->
         </transition>
 
     </view-state>
@@ -109,14 +114,20 @@ start-state="main">
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
-            <render fragments="item"/>
         </transition>
 
         <transition on="planPosts">
             <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
-            <render fragments="item"/>
+        </transition>
+
+        <transition on="showVisitors">
+            <set name="viewScope.restaurantWallId" value="userPage.restaurantWallId"/>
+            <evaluate expression="userDAOImpl.getUsersByRestaurantWallId(restaurantWallId)"
+                      result="viewScope.restaurantWallUsers"/>
+            <evaluate expression="userWallService.splitDialog()"/>
+            <!--<render fragments="restaurantPostsForm:splitDialog"/>-->
         </transition>
 
     </view-state>
@@ -166,14 +177,20 @@ start-state="main">
             <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
             <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
-            <render fragments="item"/>
         </transition>
 
         <transition on="planPosts">
             <evaluate expression="restaurantWallService.getRestaurantWallsPlanByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
             <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
-            <render fragments="item"/>
+        </transition>
+
+        <transition on="showVisitors">
+            <set name="viewScope.restaurantWallId" value="restaurantPage.restaurantWallId"/>
+            <evaluate expression="userDAOImpl.getUsersByRestaurantWallId(restaurantWallId)"
+                      result="viewScope.restaurantWallUsers"/>
+            <evaluate expression="restaurantWallService.splitDialog()"/>
+            <!--<render fragments="restaurantPostsForm:splitDialog"/>-->
         </transition>
 
     </view-state>

@@ -16,8 +16,28 @@
 
     <ui:define name="content">
 
+        <h:form id="restaurantPostsForm" styleClass="search_form" >
+
+            <div class="box-sh">
+
+                <h1>
+                    <h:commandButton id="donePosts" value="Done" action="donePosts" styleClass="post-types-button">
+                        <f:ajax render="@form"/>
+                    </h:commandButton>
+                    <p:outputLabel id="donePostsCount" value=" (#{restaurantWallsDoneCount})  " />
+
+                    <h:commandButton id="planPosts" value="Plan" action="planPosts" styleClass="post-types-button">
+                        <f:ajax render="@form"/>
+                    </h:commandButton>
+                    <p:outputLabel id="planPostsCount" value=" (#{restaurantWallsPlanCount})" />
+                </h1>
+                <p:commandButton value="#{msg.add_post}" styleClass="post-types-button" style="float: right"/>
 
 
+
+            </div>
+
+            <hr align="center" width="100%" size="2"/>
 
 
             <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${restaurantWalls}"  id="booksList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
@@ -34,24 +54,26 @@
 
                     <div class="info">
 
-                        <h:form id="booksForm" styleClass="search_form" >
 
                         <h:outputLink styleClass="content_link" target="_blank">
-                            <p:graphicImage value="/ShowRestaurantPageImage?index=#{rowIndex}" width="690px" height="100%"/>
+                            <p:graphicImage value="/ShowRestaurantPageImage?index=#{rowIndex}" width="690px" height="100%" />
                         </h:outputLink>
 
+
+
+                        <h:commandButton id="visitorsButton" value="V i s i t o r s" action="showVisitors" styleClass="visitorsButton">
+                            <f:setPropertyActionListener value="#{b.id}" target="#{restaurantPage.restaurantWallId}"/>
+                            <f:ajax render="restaurantPostsForm:restaurantUsersDialog"/>
+                        </h:commandButton> <br/>
+
+
+                        <h:form>
                         <h:inputText  id="search_string" value="#{restaurantPageComponent.repostComment}" styleClass="restaurant-wall-send-comment"/>
 
                         <h:commandButton id="btnSearch" value="#{msg.repost}" styleClass="button" action="repost">
                             <f:setPropertyActionListener value="#{b}" target="#{restaurantPage.restaurantRepostingWall}"/>
                         </h:commandButton>
-
-                        <script language="javascript">
-                            document.getElementById("search_form:search_string").setAttribute("placeholder","#{msg.search_rest}");
-                        </script>
-
                         </h:form>
-
 
                     </div>
 
@@ -61,36 +83,25 @@
 
             </p:dataGrid>
 
+            <p:fragment autoUpdate="true">
 
+            <p:confirmDialog id="restaurantUsersDialog" widgetVar="restaurantUsersDialog" header="#{msg.visitors}" resizable="false" closable="true" width="300">
 
-    </ui:define>
+                <ul>
+                    <ui:repeat value="${restaurantWallUsers}" var="f">
+                        <li>
+                            <h:commandLink id="menuView" value="${f.name}" action="toFriend">
+                                <f:setPropertyActionListener value="#{f}" target="#{userPage.user}" />
+                            </h:commandLink>
+                        </li>
+                    </ui:repeat>
+                </ul>
 
-    <ui:define name="books_count">
+            </p:confirmDialog>
 
-        <div class="box-sh">
+            </p:fragment>
 
-            <h:form id="postTypes">
-
-                <h1>
-                    <p:commandButton id="donePosts" value="Done" action="donePosts" styleClass="post-types-button">
-                        <!--<f:ajax execute="@form" render=":postsForm:postsList"/>-->
-                    </p:commandButton>
-
-                    <p:outputLabel id="donePostsCount" value=" (#{restaurantWallsDoneCount})  " />
-
-                    <p:commandButton id="planPosts" value="Plan" action="planPosts" styleClass="post-types-button">
-                    </p:commandButton>
-
-                    <p:outputLabel id="planPostsCount" value=" (#{restaurantWallsPlanCount})" />
-                </h1>
-
-                <p:commandButton value="#{msg.add_post}" styleClass="post-types-button" style="float: right"/>
-
-            </h:form>
-
-        </div>
-
-        <hr align="center" width="100%" size="2"/>
+        </h:form>
 
     </ui:define>
 

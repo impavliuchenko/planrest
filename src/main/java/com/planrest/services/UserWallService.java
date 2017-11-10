@@ -1,14 +1,12 @@
 package com.planrest.services;
 
-import com.planrest.entities.Restaurantwall;
-import com.planrest.entities.User;
-import com.planrest.entities.Userwall;
-import com.planrest.entities.UserwallRestaurantwall;
+import com.planrest.entities.*;
 import com.planrest.objects.RestaurantPageComponent;
 import com.planrest.objects.UserPageComponent;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.primefaces.context.RequestContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +29,8 @@ public class UserWallService {
 
         Userwall userwall = new Userwall();
         UserwallRestaurantwall userwallRestaurantwall = new UserwallRestaurantwall();
+        RestaurantwallUser restaurantwallUser = new RestaurantwallUser();
+
         Session session = sessionFactory.getCurrentSession();
 
         Date date = new Date();
@@ -49,6 +49,12 @@ public class UserWallService {
         userwallRestaurantwall.setUserWallId(userwall);
 
         session.save(userwallRestaurantwall);
+        session.flush();
+
+        restaurantwallUser.setUserId(user);
+        restaurantwallUser.setRestaurantWallId(restaurantWall);
+
+        session.save(restaurantwallUser);
         session.flush();
 
         restaurantPageComponent.setRepostComment("");
@@ -145,5 +151,9 @@ public class UserWallService {
         query.setParameter("currentDate", currentDate);
 
         return (long) query.uniqueResult();
+    }
+
+    public void splitDialog() {
+        RequestContext.getCurrentInstance().execute("userUsersDialog.show()");
     }
 }

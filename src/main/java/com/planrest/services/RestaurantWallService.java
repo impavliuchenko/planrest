@@ -4,6 +4,7 @@ import com.planrest.entities.Restaurantwall;
 import com.planrest.entities.UserwallRestaurantwall;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.primefaces.context.RequestContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -86,5 +87,9 @@ public class RestaurantWallService {
         query.setParameter("currentDate", currentDate);
 
         return (long) query.uniqueResult();
+    }
+
+    public void splitDialog() {
+        RequestContext.getCurrentInstance().execute("restaurantUsersDialog.show()");
     }
 }

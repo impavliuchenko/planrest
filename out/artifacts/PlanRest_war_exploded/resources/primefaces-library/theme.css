@@ -21,9 +21,9 @@ a {
     font-size:1em;
 }
 .ui-widget-content {
-    border:1px solid #a8a8a8;
+    /*border:1px solid #a8a8a8;*/
     background:#ffffff;
-    color:#4f4f4f;
+    /*color:#4f4f4f;*/
 }
 .ui-widget-content a {
     color:#4f4f4f;
@@ -166,10 +166,10 @@ color:#cd0a0a;
 .ui-icon {
     width:16px;
     height:16px;
-    background-image:url("#{resource['primefaces-library:images/ui-icons_616161_256x240.png']}");
+    /*background-image:url("#{resource['primefaces-library:images/ui-icons_616161_256x240.png']}");*/
 }
 .ui-widget-content .ui-icon {
-    background-image:url("#{resource['primefaces-library:images/ui-icons_616161_256x240.png']}");
+    /*background-image:url("#{resource['primefaces-library:images/ui-icons_616161_256x240.png']}");*/
 }
 .ui-widget-header .ui-icon {
     background-image:url("#{resource['primefaces-library:images/ui-icons_898989_256x240.png']}");

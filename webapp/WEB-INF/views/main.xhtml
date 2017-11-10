@@ -16,15 +16,31 @@
 
     <ui:define name="content">
 
-        <div class="item">
 
-        <h:form id="postsForm">
+        <h:form id="userPostsForm" styleClass="search_form" >
 
-            <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${userwallRestaurantwalls}"  id="postsList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
+            <div class="box-sh">
+
+                <h1>
+                    <h:commandButton id="donePosts" value="Done" action="donePosts" styleClass="post-types-button">
+                        <f:ajax render="@form"/>
+                    </h:commandButton>
+                    <p:outputLabel id="donePostsCount" value=" (#{userWallRestaurantWallsDoneCount})  " />
+
+                    <h:commandButton id="planPosts" value="Plan" action="planPosts" styleClass="post-types-button">
+                        <f:ajax render="@form"/>
+                    </h:commandButton>
+                    <p:outputLabel id="planPostsCount" value=" (#{userWallRestaurantWallsPlanCount})" />
+                </h1>
+
+            </div>
+
+            <hr align="center" width="100%" size="2"/>
+
+
+            <p:dataGrid  id="userPostsList" rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${userwallRestaurantwalls}"  styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
                         rowsPerPageTemplate="4,10,20" paginatorTemplate="{RowsPerPageDropdown} {PageLinks}"  paginatorAlwaysVisible="true" emptyMessage="">
-
-
-
+                <div class="item">
 
                     <div class="comment">
 
@@ -32,6 +48,7 @@
                         <h:commandButton action="delete" image="#{resource['images:close.png']}" style="float: right">
                             <f:setPropertyActionListener value="#{b.userWallId.id}" target="#{userPage.userWallId}"/>
                             <f:setPropertyActionListener value="#{b.id}" target="#{userPage.userWallRestaurantWallId}"/>
+                            <!--<f:ajax render="@form"/>-->
                         </h:commandButton>
                     <h1 style="margin: 5px;"> #{b.userWallId.comment}</h1>
                     </div>
@@ -40,6 +57,7 @@
 
                     <div class="info" style="margin-left:30px; border-width: 0 0 0 1px;/*толщина*/ border-style: solid; padding-left: 10px;/*отступ слева*/">
 
+
                         <h:commandLink id="bookName" value="#{b.restaurantWallId.restaurantId.name}"
                                        styleClass="title" action="toRestaurant">
                             <f:setPropertyActionListener value="#{b.restaurantWallId.restaurantId}" target="#{userPage.restaurant}" />
@@ -47,47 +65,45 @@
 
                         <p:rating id="rating" value="5" styleClass="rating" cancel="false" stars="5" /> <br/>
 
-
                         <p style="margin: 21px;"> #{b.restaurantWallId.comment}</p>
 
                         <h:outputLink styleClass="content_link" target="_blank">
                             <p:graphicImage value="/ShowUserPageImage?index=#{rowIndex}" width="690px" height="100%"/>
                         </h:outputLink>
 
+                        <h:commandButton id="visitorsUserButton" value="V i s i t o r s" action="showVisitors" styleClass="visitorsButton">
+                            <f:setPropertyActionListener value="#{b.restaurantWallId.id}" target="#{userPage.restaurantWallId}"/>
+                            <f:ajax render="userPostsForm:userUsersDialog"/>
+                        </h:commandButton> <br/>
+
                     </div>
 
-
+                 </div>
 
                 <hr align="center" width="100%" size="2"/>
 
             </p:dataGrid>
 
+            <p:fragment autoUpdate="true">
+
+                <p:confirmDialog id="userUsersDialog" widgetVar="userUsersDialog" header="#{msg.visitors}" resizable="false" closable="true" width="300">
+
+                    <ul>
+                        <ui:repeat value="${restaurantWallUsers}" var="f">
+                            <li>
+                                <h:commandLink id="menuView" value="${f.name}" action="toFriend">
+                                    <f:setPropertyActionListener value="#{f}" target="#{userPage.user}" />
+                                </h:commandLink>
+                            </li>
+                        </ui:repeat>
+                    </ul>
+
+                </p:confirmDialog>
+
+            </p:fragment>
+
         </h:form>
-        </div>
 
-    </ui:define>
-
-    <ui:define name="books_count">
-
-        <div class="box-sh">
-            <h:form id="postTypes">
-
-                <h1>
-                    <p:commandButton id="donePosts" value="Done" action="donePosts" styleClass="post-types-button">
-                        <!--<f:ajax execute="@form" render=":postsForm:postsList"/>-->
-                    </p:commandButton>
-                    <p:outputLabel id="donePostsCount" value=" (#{userWallRestaurantWallsDoneCount})  " />
-
-                    <p:commandButton id="planPosts" value="Plan" action="planPosts" styleClass="post-types-button">
-
-                    </p:commandButton>
-                    <p:outputLabel id="planPostsCount" value=" (#{userWallRestaurantWallsPlanCount})" />
-                </h1>
-            </h:form>
-
-        </div>
-
-        <hr align="center" width="100%" size="2"/>
 
     </ui:define>
 

@@ -109,6 +109,7 @@ body {
 .search input:focus {outline: none;}
 .search .button {float: right; width: 100px; height: 40px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5564d; border: none; }
 .info .button {margin-left: 10px; width: 100px; height: 40px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5564d; border: none; }
+.info .visitorsButton {margin-bottom: 10px; width: 690px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5c39d; border: none;}
 .search-text { color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 610px;}
 .search-text:focus {border: 1px solid #30b0e1; box-shadow: 0px 0px 5px 0px #abdfed;}
 .restaurant-wall-send-comment {color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 540px;}
@@ -136,9 +137,9 @@ body {
 .right-content { float: left; border-left: 1px solid #e5e5e5; width: 759px; min-height: 925px; padding-bottom: 34px;}
 .box-sh {padding-right: 40px; overflow: hidden; }
 .box-sh h1 {float: left; color: #7f7f7f; font-size: 30px;}
-.post-types-button {margin-top: 8px; background: #d5c39d; padding: 10px 15px 10px 15px; border-radius: 5px; margin-left: 6px; font-size: 14px; text-decoration: none;}
+.post-types-button {margin-bottom: 4px; margin-top: 7px; background: #d5c39d; padding: 10px 15px 10px 15px; border-radius: 5px; margin-left: 6px; font-size: 14px; text-decoration: none;}
 
-.item { height:100%; width: 100%; padding-top: 18px; padding-bottom: 18px; overflow: hidden; float: left; }
+.item { height:100%; width: 100%; padding-bottom: 18px; overflow: hidden; float: left; }
 .item img {float: left; margin-top: 4px;margin-bottom: 10px;}
 .item .info {overflow: hidden; padding-left: 30px; padding-right: 32px;}
 .item .book_name td {padding: 12px; font-size: 14px}

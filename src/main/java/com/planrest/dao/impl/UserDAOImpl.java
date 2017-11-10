@@ -29,4 +29,16 @@ public class UserDAOImpl extends CrudDAOImpl<User, Integer> implements Serializa
         List<User> user = (List<User>) query.list();
         return user;
     }
+
+    @Override
+    public List<User> getUsersByRestaurantWallId(int id) {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("SELECT u FROM RestaurantwallUser rwu " +
+                        "INNER JOIN rwu.userId u " +
+                        "INNER JOIN rwu.restaurantWallId rw " +
+                        "WHERE rw.id = :id");
+        query.setParameter("id", id);
+
+        return (List<User>) query.list();
+    }
 }

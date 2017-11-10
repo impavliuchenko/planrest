@@ -24,4 +24,6 @@ public class RestaurantWallDAOImpl extends CrudDAOImpl<Restaurantwall, Integer> 
         query.setParameter("id", id);
         return (List<Restaurantwall>) query.list();
     }
+
+
 }

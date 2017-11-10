@@ -896,7 +896,7 @@ overflow:auto;
     border:0;
     padding:.5em 1em;
     background:none;
-    overflow:auto;
+    /*overflow:auto;*/
     zoom:1;
 }
 .ui-dialog .ui-dialog-buttonpane {

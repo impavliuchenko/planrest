@@ -1,6 +1,7 @@
 package com.planrest.objects;
 
 import com.planrest.entities.*;
+import org.primefaces.context.RequestContext;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class UserPageComponent implements Serializable {
     private List<UserwallRestaurantwall> userwallRestaurantwalls;
     private int userWallId;
     private int userWallRestaurantWallId;
+    private int restaurantWallId;
 
     public User getUser() {
         return user;
@@ -56,4 +58,13 @@ public class UserPageComponent implements Serializable {
     public void setUserWallRestaurantWallId(int userWallRestaurantWallId) {
         this.userWallRestaurantWallId = userWallRestaurantWallId;
     }
+
+    public int getRestaurantWallId() {
+        return restaurantWallId;
+    }
+
+    public void setRestaurantWallId(int restaurantWallId) {
+        this.restaurantWallId = restaurantWallId;
+    }
+
 }
