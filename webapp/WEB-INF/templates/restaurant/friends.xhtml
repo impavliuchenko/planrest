@@ -21,15 +21,14 @@
                                             text-decoration: none;
                                             font-size: 18px;"/>
                     <ul>
+                        <ui:repeat value="${allVisitors}" var="f">
 
-                        <!--<ui:repeat value="${allFriends}" var="f">-->
-
-                            <!--<li>-->
-                                <!--<h:commandLink id="menuView" value="${f.name}" action="toFriend">-->
-                                    <!--<f:setPropertyActionListener value="#{f}" target="#{userPage.user}" />-->
-                                <!--</h:commandLink>-->
-                            <!--</li>-->
-                        <!--</ui:repeat>-->
+                            <li>
+                                <h:commandLink id="restaurantFriends" value="${f.name}" action="toFriend">
+                                    <f:setPropertyActionListener value="#{f}" target="#{restaurantPage.user}" />
+                                </h:commandLink>
+                            </li>
+                        </ui:repeat>
                     </ul>
                 </h:form>
             </div>

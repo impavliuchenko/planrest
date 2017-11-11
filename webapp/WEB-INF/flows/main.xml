@@ -144,6 +144,9 @@ start-state="main">
                       result="viewScope.restaurantWalls"/>
             <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
 
+            <evaluate expression="userDAOImpl.getVisitorsByRestaurantId(restaurant.id)"
+                      result="viewScope.allVisitors"/>
+
             <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantIdCount(restaurant.id)"
                       result="viewScope.restaurantWallsDoneCount" result-type="long"/>
 
@@ -191,6 +194,10 @@ start-state="main">
                       result="viewScope.restaurantWallUsers"/>
             <evaluate expression="restaurantWallService.splitDialog()"/>
             <!--<render fragments="restaurantPostsForm:splitDialog"/>-->
+        </transition>
+
+        <transition on="toFriend" to="friend">
+            <set name="flowScope.friend" value="restaurantPage.user"/>
         </transition>
 
     </view-state>

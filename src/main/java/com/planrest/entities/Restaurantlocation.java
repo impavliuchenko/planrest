@@ -10,7 +10,6 @@ public class Restaurantlocation implements Serializable {
     private int id;
     private String locationName;
     private Collection<RestaurantRestaurantlocation> restaurantRestaurantlocationsById;
-    private Collection<Restaurantaddress> restaurantaddressesById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -61,12 +60,4 @@ public class Restaurantlocation implements Serializable {
         this.restaurantRestaurantlocationsById = restaurantRestaurantlocationsById;
     }
 
-    @OneToMany(mappedBy = "restaurantLocationId")
-    public Collection<Restaurantaddress> getRestaurantaddressesById() {
-        return restaurantaddressesById;
-    }
-
-    public void setRestaurantaddressesById(Collection<Restaurantaddress> restaurantaddressesById) {
-        this.restaurantaddressesById = restaurantaddressesById;
-    }
 }

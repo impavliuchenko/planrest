@@ -15,6 +15,7 @@ public class Restaurant implements Serializable {
     private String password;
     private String email;
     private byte[] image;
+    private String address;
     private Collection<RestaurantRestaurantlocation> restaurantRestaurantlocationsById;
     private Collection<Restaurantrating> restaurantratingsById;
     private Collection<RestaurantRestauranttype> restaurantRestauranttypesById;
@@ -72,7 +73,7 @@ public class Restaurant implements Serializable {
     }
 
     @Basic
-    @Column(name = "email", nullable = true, length = 255)
+    @Column(name = "email", nullable = false, length = 255)
     public String getEmail() {
         return email;
     }
@@ -89,6 +90,16 @@ public class Restaurant implements Serializable {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    @Basic
+    @Column(name = "address", nullable = false)
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
