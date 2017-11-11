@@ -5,7 +5,6 @@ import java.util.List;
 
 public interface CrudDAO <T, PK extends Serializable> {
 
-
     T add(T newInstance);
 
     T getUniqueById(PK id);

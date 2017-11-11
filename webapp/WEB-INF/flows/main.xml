@@ -42,10 +42,12 @@ start-state="main">
             <set name="flowScope.restaurant" value="userPage.restaurant"/>
         </transition>
 
+        <transition on="toMain" to="main"/>
+
         <transition on="delete" to="main">
             <set name="viewScope.userWallId" value="userPage.userWallId"/>
-            <set name="viewScope.userWallRestaurantWallId" value="userPage.userWallRestaurantWallId"/>
-            <evaluate expression="userWallService.deleteUserWallbyUserWallIdAndRestaurantWallId(userWallId, userWallRestaurantWallId)"/>
+            <set name="viewScope.restaurantWallId" value="userPage.restaurantWallId"/>
+            <evaluate expression="userWallService.deleteUserWallbyUserWallIdAndRestaurantWallId(userWallId, restaurantWallId, user.id)"/>
         </transition>
 
         <transition on="donePosts">
@@ -143,6 +145,7 @@ start-state="main">
             <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
             <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+            <set name="restaurantPage.eventPlan" value="false"/>
 
             <evaluate expression="userDAOImpl.getVisitorsByRestaurantId(restaurant.id)"
                       result="viewScope.allVisitors"/>
@@ -180,12 +183,14 @@ start-state="main">
             <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
             <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+            <set name="restaurantPage.eventPlan" value="false"/>
         </transition>
 
         <transition on="planPosts">
             <evaluate expression="restaurantWallService.getRestaurantWallsPlanByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
             <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+            <set name="restaurantPage.eventPlan" value="true"/>
         </transition>
 
         <transition on="showVisitors">

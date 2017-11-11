@@ -18,8 +18,9 @@ public class RestaurantPageComponent implements Serializable{
     private List<UserwallRestaurantwall> userwallRestaurantwalls;
     private Restaurantwall restaurantRepostingWall;
     private List<Restaurantwall> restaurantWalls;
-    private String repostComment;
+    private String repostComment = "";
     private int restaurantWallId;
+    private boolean eventPlan;
 
     public User getUser() {
         return user;
@@ -75,5 +76,13 @@ public class RestaurantPageComponent implements Serializable{
 
     public void setRestaurantWallId(int restaurantWallId) {
         this.restaurantWallId = restaurantWallId;
+    }
+
+    public boolean isEventPlan() {
+        return eventPlan;
+    }
+
+    public void setEventPlan(boolean eventPlan) {
+        this.eventPlan = eventPlan;
     }
 }

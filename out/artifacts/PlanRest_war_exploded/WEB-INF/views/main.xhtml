@@ -47,7 +47,7 @@
                     <span><strong>#{b.userWallId.date}</strong></span>
                         <h:commandButton action="delete" image="#{resource['images:close.png']}" style="float: right">
                             <f:setPropertyActionListener value="#{b.userWallId.id}" target="#{userPage.userWallId}"/>
-                            <f:setPropertyActionListener value="#{b.id}" target="#{userPage.userWallRestaurantWallId}"/>
+                            <f:setPropertyActionListener value="#{b.restaurantWallId.id}" target="#{userPage.restaurantWallId}"/>
                             <!--<f:ajax render="@form"/>-->
                         </h:commandButton>
                     <h1 style="margin: 5px;"> #{b.userWallId.comment}</h1>

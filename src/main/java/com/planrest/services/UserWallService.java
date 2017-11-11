@@ -27,52 +27,79 @@ public class UserWallService {
     @Transactional
     public void addUserWallByRestaurantWall(Restaurantwall restaurantWall, User user, String repostComment){
 
+        Session session = sessionFactory.getCurrentSession();
+
         Userwall userwall = new Userwall();
         UserwallRestaurantwall userwallRestaurantwall = new UserwallRestaurantwall();
         RestaurantwallUser restaurantwallUser = new RestaurantwallUser();
 
-        Session session = sessionFactory.getCurrentSession();
+        Query query = session
+                .createQuery("SELECT rwu FROM RestaurantwallUser rwu " +
+                "WHERE rwu.restaurantWallId = :restaurantWallId " +
+                        "AND rwu.userId = :userId");
+        query.setParameter("restaurantWallId", restaurantWall);
+        query.setParameter("userId", user);
 
-        Date date = new Date();
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+        RestaurantwallUser checkRepost = (RestaurantwallUser) query.uniqueResult();
 
-        userwall.setDate(formatForDateNow.format(date));
-        userwall.setComment(repostComment);
-        userwall.setUserId(user);
+        if (checkRepost==null) {
 
-        int userWallId = (int) session.save(userwall);
-        session.flush();
+            Date date = new Date();
+            SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 
-        userwall = session.get(Userwall.class, userWallId);
+            userwall.setDate(formatForDateNow.format(date));
+            userwall.setComment(repostComment);
+            userwall.setUserId(user);
 
-        userwallRestaurantwall.setRestaurantWallId(restaurantWall);
-        userwallRestaurantwall.setUserWallId(userwall);
+            int userWallId = (int) session.save(userwall);
+            session.flush();
 
-        session.save(userwallRestaurantwall);
-        session.flush();
+            userwall = session.get(Userwall.class, userWallId);
 
-        restaurantwallUser.setUserId(user);
-        restaurantwallUser.setRestaurantWallId(restaurantWall);
+            userwallRestaurantwall.setRestaurantWallId(restaurantWall);
+            userwallRestaurantwall.setUserWallId(userwall);
 
-        session.save(restaurantwallUser);
-        session.flush();
+            session.save(userwallRestaurantwall);
+            session.flush();
 
-        restaurantPageComponent.setRepostComment("");
+            restaurantwallUser.setUserId(user);
+            restaurantwallUser.setRestaurantWallId(restaurantWall);
+
+            session.save(restaurantwallUser);
+            session.flush();
+
+            restaurantPageComponent.setRepostComment("");
+
+            okRepostingDialog();
+
+        } else {
+            restaurantPageComponent.setRepostComment("");
+            errorRepostingDialog();
+        }
 
     }
 
     @Transactional
-    public void deleteUserWallbyUserWallIdAndRestaurantWallId(int userWallId, int restaurantWallId){
+    public void deleteUserWallbyUserWallIdAndRestaurantWallId(int userWallId, int restaurantWallId, int userId){
         Session session = sessionFactory.getCurrentSession();
+
+        Query query1 = session.createQuery("DELETE UserwallRestaurantwall uwrw " +
+                "WHERE uwrw.userWallId.id = :userWallId " +
+                "AND uwrw.restaurantWallId.id = :restaurantWallId");
+        query1.setParameter("userWallId", userWallId);
+        query1.setParameter("restaurantWallId", restaurantWallId);
+        query1.executeUpdate();
 
         Userwall userwall = new Userwall();
         userwall.setId(userWallId);
-
-        UserwallRestaurantwall userwallRestaurantwall = new UserwallRestaurantwall();
-        userwallRestaurantwall.setId(restaurantWallId);
-
-        session.delete(userwallRestaurantwall);
         session.delete(userwall);
+
+        Query query2 = session.createQuery("DELETE RestaurantwallUser rwu " +
+                "WHERE rwu.restaurantWallId.id = :restaurantWallId " +
+                "AND rwu.userId.id = :userId");
+        query2.setParameter("restaurantWallId", restaurantWallId);
+        query2.setParameter("userId", userId);
+        query2.executeUpdate();
     }
 
     @Transactional
@@ -156,4 +183,14 @@ public class UserWallService {
     public void splitDialog() {
         RequestContext.getCurrentInstance().execute("userUsersDialog.show()");
     }
+
+    public void errorRepostingDialog() {
+        RequestContext.getCurrentInstance().execute("errorRepostingDialog.show()");
+    }
+
+    public void okRepostingDialog() {
+        RequestContext.getCurrentInstance().execute("okRepostingDialog.show()");
+    }
+
+
 }

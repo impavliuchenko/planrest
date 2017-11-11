@@ -67,12 +67,13 @@
                         </h:commandButton> <br/>
 
 
-                        <h:form>
-                        <h:inputText  id="search_string" value="#{restaurantPageComponent.repostComment}" styleClass="restaurant-wall-send-comment"/>
+                        <h:form id="repostingForm" rendered="#{restaurantPage.eventPlan}">
+                             <h:inputText  id="search_string" value="#{restaurantPageComponent.repostComment}" styleClass="restaurant-wall-send-comment"/>
 
-                        <h:commandButton id="btnSearch" value="#{msg.repost}" styleClass="button" action="repost">
-                            <f:setPropertyActionListener value="#{b}" target="#{restaurantPage.restaurantRepostingWall}"/>
-                        </h:commandButton>
+                             <h:commandButton id="btnSearch" value="#{msg.repost}" styleClass="button" action="repost">
+                                 <f:setPropertyActionListener value="#{b}" target="#{restaurantPage.restaurantRepostingWall}"/>
+                                 <f:ajax render="search_string" execute="@form"/>
+                             </h:commandButton>
                         </h:form>
 
                     </div>
@@ -96,6 +97,17 @@
                         </li>
                     </ui:repeat>
                 </ul>
+
+            </p:confirmDialog>
+
+            <p:confirmDialog id="errorRepostingDialog" widgetVar="errorRepostingDialog" header="You can't make repost" resizable="false" closable="true" width="300">
+                <p>You have already joined this event! </p>
+
+            </p:confirmDialog>
+
+
+            <p:confirmDialog id="okRepostingDialog" widgetVar="okRepostingDialog" header="You make repost" resizable="false" closable="true" width="300">
+                <p>Thank you for repost. We are waiting for you! </p>
 
             </p:confirmDialog>
 
