@@ -67,9 +67,13 @@
 
                         <p style="margin: 21px;"> #{b.restaurantWallId.comment}</p>
 
+                        <div class="wall_image_info">
+
                         <h:outputLink styleClass="content_link" target="_blank">
                             <p:graphicImage value="/ShowUserPageImage?index=#{rowIndex}" width="690px" height="100%"/>
                         </h:outputLink>
+
+                        </div>
 
                         <h:commandButton id="visitorsUserButton" value="V i s i t o r s" action="showVisitors" styleClass="visitorsButton">
                             <f:setPropertyActionListener value="#{b.restaurantWallId.id}" target="#{userPage.restaurantWallId}"/>

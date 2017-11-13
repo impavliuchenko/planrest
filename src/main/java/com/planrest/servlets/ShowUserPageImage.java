@@ -38,7 +38,7 @@ public class ShowUserPageImage extends HttpServlet {
             if (index==-1) {
                 image = userPageComponent.getUser().getImage();
             } else {
-                image = userPageComponent.getUserwallRestaurantwalls().get(index).getRestaurantWallId().getImage();
+                image = userPageComponent.getUserWallImages().get(index);
             }
 
             response.setContentLength(image.length);

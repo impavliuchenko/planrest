@@ -17,7 +17,7 @@ public class RestaurantPageComponent implements Serializable{
     private Restaurant restaurant;
     private List<UserwallRestaurantwall> userwallRestaurantwalls;
     private Restaurantwall restaurantRepostingWall;
-    private List<Restaurantwall> restaurantWalls;
+    private List<byte[]> restaurantWallImages;
     private String repostComment = "";
     private int restaurantWallId;
     private boolean eventPlan;
@@ -54,12 +54,12 @@ public class RestaurantPageComponent implements Serializable{
         this.restaurantRepostingWall = restaurantRepostingWall;
     }
 
-    public List<Restaurantwall> getRestaurantWalls() {
-        return restaurantWalls;
+    public List<byte[]> getRestaurantWallImages() {
+        return restaurantWallImages;
     }
 
-    public void setRestaurantWalls(List<Restaurantwall> restaurantWalls) {
-        this.restaurantWalls = restaurantWalls;
+    public void setRestaurantWallImages(List<byte[]> restaurantWallImages) {
+        this.restaurantWallImages = restaurantWallImages;
     }
 
     public String getRepostComment() {

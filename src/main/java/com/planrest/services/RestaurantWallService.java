@@ -2,6 +2,7 @@ package com.planrest.services;
 
 import com.planrest.entities.Restaurantwall;
 import com.planrest.entities.UserwallRestaurantwall;
+import com.planrest.objects.RestaurantPageComponent;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.primefaces.context.RequestContext;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +20,9 @@ public class RestaurantWallService {
 
     @Autowired
     SessionFactory sessionFactory;
+
+    @Autowired
+    RestaurantPageComponent restaurantPageComponent;
 
     @Transactional
     public List<Restaurantwall> getRestaurantWallsDoneByRestaurantId(int id) {
@@ -87,6 +92,14 @@ public class RestaurantWallService {
         query.setParameter("currentDate", currentDate);
 
         return (long) query.uniqueResult();
+    }
+
+    public void setRestaurantWallImagesByList(List<Restaurantwall> restaurantwalls){
+        List<byte[]> images = new ArrayList<>();
+        for (Restaurantwall uwrw: restaurantwalls){
+            images.add(uwrw.getImage());
+        }
+        restaurantPageComponent.setRestaurantWallImages(images);
     }
 
     public void splitDialog() {

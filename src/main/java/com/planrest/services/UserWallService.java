@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +24,9 @@ public class UserWallService {
 
     @Autowired
     RestaurantPageComponent restaurantPageComponent;
+
+    @Autowired
+    UserPageComponent userPageComponent;
 
     @Transactional
     public void addUserWallByRestaurantWall(Restaurantwall restaurantWall, User user, String repostComment){
@@ -179,6 +183,15 @@ public class UserWallService {
 
         return (long) query.uniqueResult();
     }
+
+    public void setUserWallImagesByList(List<UserwallRestaurantwall> userwallRestaurantwalls){
+        List<byte[]> images = new ArrayList<>();
+        for (UserwallRestaurantwall uwrw: userwallRestaurantwalls){
+            images.add(uwrw.getRestaurantWallId().getImage());
+        }
+        userPageComponent.setUserWallImages(images);
+    }
+
 
     public void splitDialog() {
         RequestContext.getCurrentInstance().execute("userUsersDialog.show()");

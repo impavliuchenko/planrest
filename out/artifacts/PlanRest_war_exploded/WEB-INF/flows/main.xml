@@ -19,7 +19,7 @@ start-state="main">
 
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
-            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)"/>
 
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserIdCount(user.id)"
                       result="viewScope.userWallRestaurantWallsDoneCount" result-type="long"/>
@@ -53,13 +53,13 @@ start-state="main">
         <transition on="donePosts">
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
-            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)" />
         </transition>
 
         <transition on="planPosts">
             <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
-            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)"/>
         </transition>
 
         <transition on="showVisitors">
@@ -93,7 +93,7 @@ start-state="main">
 
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
-            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)" />
 
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserIdCount(user.id)"
                       result="viewScope.userWallRestaurantWallsDoneCount" result-type="long"/>
@@ -122,13 +122,13 @@ start-state="main">
         <transition on="donePosts">
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
-            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)" />
         </transition>
 
         <transition on="planPosts">
             <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
-            <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
+            <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)" />
         </transition>
 
         <transition on="showVisitors">
@@ -159,7 +159,7 @@ start-state="main">
 
             <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
-            <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+            <evaluate expression="restaurantWallService.setRestaurantWallImagesByList(restaurantWalls)" />
             <set name="restaurantPage.eventPlan" value="false"/>
 
             <evaluate expression="userDAOImpl.getVisitorsByRestaurantId(restaurant.id)"
@@ -197,14 +197,14 @@ start-state="main">
         <transition on="donePosts">
             <evaluate expression="restaurantWallService.getRestaurantWallsDoneByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
-            <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+            <evaluate expression="restaurantWallService.setRestaurantWallImagesByList(restaurantWalls)" />
             <set name="restaurantPage.eventPlan" value="false"/>
         </transition>
 
         <transition on="planPosts">
             <evaluate expression="restaurantWallService.getRestaurantWallsPlanByRestaurantId(restaurant.id)"
                       result="viewScope.restaurantWalls"/>
-            <set name="restaurantPageComponent.restaurantWalls" value="restaurantWalls"/>
+            <evaluate expression="restaurantWallService.setRestaurantWallImagesByList(restaurantWalls)" />
             <set name="restaurantPage.eventPlan" value="true"/>
         </transition>
 

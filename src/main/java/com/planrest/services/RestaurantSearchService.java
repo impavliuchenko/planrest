@@ -33,19 +33,15 @@ public class RestaurantSearchService {
     @Autowired
     private RestaurantTypeDAO restaurantTypeDAO;
 
+    @Autowired
+    private RestaurantRatingDAO restaurantRatingDAO;
+
     @Transactional
     public List<Restauranttype> getTypesByRestaurants(List<Restaurant> restaurants){
         List<Restauranttype> restaurantTypes = new ArrayList<>();
 
         for (Restaurant r: restaurants) {
-            Query query = sessionFactory.getCurrentSession()
-                    .createQuery("SELECT rt FROM RestaurantRestauranttype rrt " +
-                            "INNER JOIN rrt.restaurantTypeId rt " +
-                            "INNER JOIN rrt.restaurantId r " +
-                            "WHERE r.id = :id");
-            query.setParameter("id", r.getId());
-
-            restaurantTypes.add((Restauranttype) query.uniqueResult());
+            restaurantTypes.add(restaurantTypeDAO.getRestaurantTypeByRestaurantId(r.getId()));
         }
 
         return restaurantTypes;
@@ -56,14 +52,7 @@ public class RestaurantSearchService {
         List<Restaurantlocation> restaurantTypes = new ArrayList<>();
 
         for (Restaurant r: restaurants) {
-            Query query = sessionFactory.getCurrentSession()
-                    .createQuery("SELECT rl FROM RestaurantRestaurantlocation rrl " +
-                            "INNER JOIN rrl.restaurantLocationId rl " +
-                            "INNER JOIN rrl.restaurantId r " +
-                            "WHERE r.id = :id");
-            query.setParameter("id", r.getId());
-
-            restaurantTypes.add((Restaurantlocation) query.uniqueResult());
+            restaurantTypes.add(restaurantLocationDAO.getRestaurantLocationByRestaurantId(r.getId()));
         }
 
         return restaurantTypes;
@@ -74,12 +63,7 @@ public class RestaurantSearchService {
         List<Double> averageRatings = new ArrayList<>();
 
         for (Restaurant r: restaurants) {
-            Query query = sessionFactory.getCurrentSession()
-                    .createQuery("SELECT AVG(rr.rating) FROM Restaurantrating rr INNER JOIN rr.restaurantId r " +
-                            "WHERE r.id = :id GROUP BY r.id");
-            query.setParameter("id", r.getId());
-
-            averageRatings.add((double) query.uniqueResult());
+            averageRatings.add(restaurantRatingDAO.getAverageRestaurantRatingByRestaurantId(r.getId()));
         }
 
         return averageRatings;
@@ -125,11 +109,7 @@ public class RestaurantSearchService {
         }
 
         for (Restaurant r: list) {
-            Query innerQuery = session
-                    .createQuery("SELECT AVG(rr.rating) FROM Restaurantrating rr INNER JOIN rr.restaurantId r " +
-                            "WHERE r.id = :id GROUP BY r.id");
-            innerQuery.setParameter("id", r.getId());
-            double avrRating = (double) innerQuery.uniqueResult();
+            double avrRating = restaurantRatingDAO.getAverageRestaurantRatingByRestaurantId(r.getId());
             if (avrRating >= from && avrRating <= to){
                 finalList.add(r);
             }
@@ -144,7 +124,6 @@ public class RestaurantSearchService {
         for (Restaurant r: restaurants) {
             searchImages.add(r.getImage());
         }
-
         return searchImages;
     }
 

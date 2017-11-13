@@ -14,7 +14,7 @@ public class UserPageComponent implements Serializable {
 
     private User user;
     private Restaurant restaurant;
-    private List<UserwallRestaurantwall> userwallRestaurantwalls;
+    private List<byte[]> userWallImages;
     private int userWallId;
     private int restaurantWallId;
 
@@ -34,12 +34,12 @@ public class UserPageComponent implements Serializable {
         this.restaurant = restaurant;
     }
 
-    public List<UserwallRestaurantwall> getUserwallRestaurantwalls() {
-        return userwallRestaurantwalls;
+    public List<byte[]> getUserWallImages() {
+        return userWallImages;
     }
 
-    public void setUserwallRestaurantwalls(List<UserwallRestaurantwall> userwallRestaurantwalls) {
-        this.userwallRestaurantwalls = userwallRestaurantwalls;
+    public void setUserWallImages(List<byte[]> userWallImages) {
+        this.userWallImages = userWallImages;
     }
 
     public int getUserWallId() {
