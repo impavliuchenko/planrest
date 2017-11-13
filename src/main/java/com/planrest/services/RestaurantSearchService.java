@@ -33,9 +33,6 @@ public class RestaurantSearchService {
     @Autowired
     private RestaurantTypeDAO restaurantTypeDAO;
 
-    @Autowired
-    private RestaurantRatingDAO restaurantRatingDAO;
-
     @Transactional
     public List<Restauranttype> getTypesByRestaurants(List<Restaurant> restaurants){
         List<Restauranttype> restaurantTypes = new ArrayList<>();

@@ -39,6 +39,7 @@
         </transition>
 
         <transition on="searchUser" to="searchUser"/>
+        <transition on="searchRestaurant" to="searchRestaurant"/>
         <transition on="toRestaurant" to="restaurant">
             <set name="flowScope.restaurant" value="restaurantSearch.restaurant"/>
         </transition>
@@ -47,11 +48,47 @@
 
     <view-state id="searchUser" view="/WEB-INF/views/userSearch.xhtml">
 
+        <var name="userSearch" class="com.planrest.objects.UserSearchComponent"/>
+
+        <on-entry>
+            <evaluate expression="userSearchService.setDefaultVariables()"/>
+            <evaluate expression="userSearchService.getAllLocations()" result="viewScope.allLocations"/>
+            <evaluate expression="userSearchService.getRatingListFrom()" result="viewScope.ratingFrom"/>
+            <evaluate expression="userSearchService.getRatingListTo()" result="viewScope.ratingTo"/>
+        </on-entry>
+
+        <transition on="search">
+            <set name="viewScope.userSearchName" value="userSearchComponent.searchString"/>
+            <set name="viewScope.selectedLocation" value="userSearchComponent.selectedLocation"/>
+            <set name="viewScope.selectedRatingFrom" value="userSearchComponent.ratingFrom"/>
+            <set name="viewScope.selectedRatingTo" value="userSearchComponent.ratingTo"/>
+            <evaluate expression="userSearchService.searchUsers(userSearchName, selectedLocation, selectedRatingFrom, selectedRatingTo)"
+                      result="viewScope.usersSearchList"/>
+            <evaluate expression="userSearchService.getSearchImages(usersSearchList)"
+                      result="userSearchComponent.searchImages"/>
+            <evaluate expression="userSearchService.getLocationsByUsers(usersSearchList)"
+                      result="viewScope.userLocations"/>
+            <evaluate expression="userSearchService.getAverageUserRating(usersSearchList)"
+                      result="viewScope.userAverageRatings"/>
+        </transition>
+
+        <transition on="searchUser" to="searchUser"/>
+        <transition on="searchRestaurant" to="searchRestaurant"/>
+        <transition on="toUser" to="user">
+            <set name="flowScope.user" value="userSearch.user"/>
+        </transition>
+        <transition on="toMain" to="home"/>
+
     </view-state>
     
     <end-state id="restaurant">
         <output name="restaurant" value="restaurant" />
     </end-state>
+
     <end-state id="home"/>
+
+    <end-state id="user">
+        <output name="friend" value="user" />
+    </end-state>
 
 </flow>

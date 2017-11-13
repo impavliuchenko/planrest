@@ -124,6 +124,7 @@
                 <entry key="userPageComponent" value-ref="userPageComponent"/>
                 <entry key="restaurantPageComponent" value-ref="restaurantPageComponent"/>
                 <entry key="restaurantSearchComponent" value-ref="restaurantSearchComponent"/>
+                <entry key="userSearchComponent" value-ref="userSearchComponent"/>
             </map>
         </property>
     </bean>

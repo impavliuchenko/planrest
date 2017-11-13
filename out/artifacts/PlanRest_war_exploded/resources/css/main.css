@@ -110,14 +110,13 @@ body {
     margin:0;
 }
 
-.search-text{
-    height:15px;
-}
+
 .search input:focus {outline: none;}
 .search .button {float: right; width: 100px; height: 40px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5564d; border: none; }
 .info .button {margin-left: 10px; width: 100px; height: 40px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5564d; border: none; }
 .info .visitorsButton {margin-bottom: 10px; width: 690px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5c39d; border: none;}
-.search-text { color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 196px;}
+.search-text { color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 196px; height:15px;}
+.search-user-text { color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 336px; height:15px;}
 .search-text:focus {border: 1px solid #30b0e1; box-shadow: 0px 0px 5px 0px #abdfed;}
 .restaurant-wall-send-comment {color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 540px;}
 .restaurant-wall-send-comment:focus {border: 1px solid #30b0e1; box-shadow: 0px 0px 5px 0px #abdfed;}

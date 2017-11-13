@@ -4,8 +4,104 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+
+<ui:composition template="/WEB-INF/templates/search/searchPage.xhtml">
+
+    <ui:define name="title">
+        _PlanRest_
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="search">
+            <div class="search_line">
+
+                <h:form styleClass="search_form" id="search_form">
+
+
+                    <h:inputText  id="search_string" value="#{userSearchComponent.searchString}" styleClass="search-user-text"/>
+
+                    <h:selectOneMenu id="search_locations" styleClass="select_search" value="#{userSearchComponent.selectedLocation}">
+                        <f:selectItems value="${allLocations}"/>
+                    </h:selectOneMenu>
+
+                    <h:selectOneMenu id="search_from_rating" styleClass="select_search" value="#{userSearchComponent.ratingFrom}">
+                        <f:selectItems value="${ratingFrom}"/>
+                    </h:selectOneMenu>
+
+                    <h:selectOneMenu id="search__to_rating" styleClass="select_search" value="#{userSearchComponent.ratingTo}">
+                        <f:selectItems value="${ratingTo}"/>
+                    </h:selectOneMenu>
+
+                    <h:commandButton id="btnSearch" action="search" value="#{msg.search}" styleClass="button"/>
+
+
+                    <script language="javascript">
+                        document.getElementById("search_form:search_string").setAttribute("placeholder","#{msg.search_users}");
+                    </script>
+
+                </h:form>
+            </div>
+
+            <div class="search-results">
+                <h:form id="searchRestaurantForm" >
+
+                    <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true" var="b" value="${usersSearchList}" id="searchList" styleClass="books_list"  paginator="true" rows="4" paginatorPosition="bottom"
+                                rowsPerPageTemplate="4,10,20" paginatorTemplate="{RowsPerPageDropdown} {PageLinks}"  paginatorAlwaysVisible="true" emptyMessage="">
+
+                        <div class="item">
+
+                            <div class="image_search_info">
+
+                                <h:outputLink styleClass="content_link" target="_blank">
+                                    <p:graphicImage value="/ShowSearchUserImage?index=#{rowIndex}" width="300"/>
+                                </h:outputLink>
+
+                            </div>
+
+
+                            <div class="info">
+
+                                <h:commandLink id="restaurantName" styleClass="search_title" action="toUser">
+                                    #{b.name}
+                                    <f:setPropertyActionListener value="#{b}" target="#{userSearch.user}" />
+                                </h:commandLink>
+
+                                <table>
+
+                                    <tr>
+                                        <td>${msg.birthday}</td>
+                                        <td style="font-weight: normal;">${b.birthday}</td>
+                                    </tr >
+                                    <tr>
+                                        <td>${msg.sex}</td>
+                                        <td style="font-weight: normal;">${b.sex}</td>
+                                    </tr>
+                                    <tr >
+                                        <td>${msg.location}</td>
+                                        <td style="font-weight: normal;">${userLocations.get(rowIndex).locationName}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>${msg.rating}</td>
+                                        <td style="font-weight: normal;">${userAverageRatings.get(rowIndex)}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <hr align="center" width="100%" size="2"/>
+
+                    </p:dataGrid>
+
+                </h:form>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
+
 </html>

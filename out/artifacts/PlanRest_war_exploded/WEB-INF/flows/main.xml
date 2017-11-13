@@ -233,7 +233,9 @@ start-state="main">
     <subflow-state id="search" subflow="search">
 
         <input name="isRestaurantSearch"/>
+
         <output name="restaurant"/>
+        <output name="friend"/>
 
         <transition on="home" to="main"/>
         <transition on="user" to="friend"/>

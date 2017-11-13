@@ -6,6 +6,7 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import java.io.Serializable;
+import java.util.List;
 
 @Transactional
 @Repository
@@ -19,5 +20,11 @@ public class UserLocationDAOImpl extends CrudDAOImpl<Userlocation, Integer> impl
                         "INNER JOIN uul.locationId ul WHERE u.id = :id");
         query.setParameter("id", id);
         return (Userlocation) query.uniqueResult();
+    }
+
+    @Override
+    public List<String> getAllUserLocations() {
+        return (List<String>) sessionFactory.getCurrentSession()
+                .createQuery("SELECT ul.locationName FROM Userlocation ul").list();
     }
 }
