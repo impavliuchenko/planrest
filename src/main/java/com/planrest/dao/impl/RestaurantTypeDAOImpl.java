@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Transactional
 @Repository
@@ -20,5 +21,11 @@ public class RestaurantTypeDAOImpl extends CrudDAOImpl<Restauranttype, Integer> 
                         "WHERE r.id = :id");
         query.setParameter("id", id);
         return (Restauranttype) query.uniqueResult();
+    }
+
+    @Override
+    public List<String> getAllRestaurantTypes() {
+        return (List<String>) sessionFactory.getCurrentSession()
+                .createQuery("SELECT rt.typeName FROM Restauranttype rt").list();
     }
 }

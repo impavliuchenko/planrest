@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd" start-state="searchType">
+
+
+    <decision-state id="searchType">
+        <if test="isRestaurantSearch" then="searchRestaurant" else="searchUser" />
+    </decision-state>
+
+    <view-state id="searchRestaurant" view="/WEB-INF/views/restaurantSearch.xhtml">
+
+        <var name="restaurantSearch" class="com.planrest.objects.RestaurantSearchComponent"/>
+
+        <on-entry>
+            <evaluate expression="restaurantSearchService.setDefaultVariables()"/>
+            <evaluate expression="restaurantSearchService.getAllLocations()" result="viewScope.allLocations"/>
+            <evaluate expression="restaurantSearchService.getAllTypes()" result="viewScope.allTypes"/>
+            <evaluate expression="restaurantSearchService.getRatingListFrom()" result="viewScope.ratingFrom"/>
+            <evaluate expression="restaurantSearchService.getRatingListTo()" result="viewScope.ratingTo"/>
+        </on-entry>
+
+        <transition on="search">
+            <set name="viewScope.restaurantSearchName" value="restaurantSearchComponent.searchString"/>
+            <set name="viewScope.selectedLocation" value="restaurantSearchComponent.selectedLocation"/>
+            <set name="viewScope.selectedType" value="restaurantSearchComponent.selectedType"/>
+            <set name="viewScope.selectedRatingFrom" value="restaurantSearchComponent.ratingFrom"/>
+            <set name="viewScope.selectedRatingTo" value="restaurantSearchComponent.ratingTo"/>
+            <evaluate expression="restaurantSearchService.searchRestaurantsByName(restaurantSearchName, selectedLocation, selectedType, selectedRatingFrom, selectedRatingTo)"
+            result="viewScope.restaurantsSearchList"/>
+            <evaluate expression="restaurantSearchService.getSearchImages(restaurantsSearchList)"
+                      result="restaurantSearchComponent.searchImages"/>
+            <evaluate expression="restaurantSearchService.getTypesByRestaurants(restaurantsSearchList)"
+                      result="viewScope.restaurantTypes"/>
+            <evaluate expression="restaurantSearchService.getLocationsByRestaurants(restaurantsSearchList)"
+                      result="viewScope.restaurantLocations"/>
+            <evaluate expression="restaurantSearchService.getAverageRestaurantRating(restaurantsSearchList)"
+                      result="viewScope.restaurantAverageRatings"/>
+        </transition>
+
+        <transition on="searchUser" to="searchUser"/>
+        <transition on="toRestaurant" to="restaurant">
+            <set name="flowScope.restaurant" value="restaurantSearch.restaurant"/>
+        </transition>
+        <transition on="toMain" to="home"/>
+    </view-state>
+
+    <view-state id="searchUser" view="/WEB-INF/views/userSearch.xhtml">
+
+    </view-state>
+    
+    <end-state id="restaurant">
+        <output name="restaurant" value="restaurant" />
+    </end-state>
+    <end-state id="home"/>
+
+</flow>

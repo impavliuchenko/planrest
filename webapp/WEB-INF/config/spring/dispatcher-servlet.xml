@@ -123,6 +123,7 @@
             <map>
                 <entry key="userPageComponent" value-ref="userPageComponent"/>
                 <entry key="restaurantPageComponent" value-ref="restaurantPageComponent"/>
+                <entry key="restaurantSearchComponent" value-ref="restaurantSearchComponent"/>
             </map>
         </property>
     </bean>

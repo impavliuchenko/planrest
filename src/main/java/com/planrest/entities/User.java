@@ -155,7 +155,6 @@ public class User implements Serializable {
     }
 
     @OneToMany(mappedBy = "userId")
-    @LazyCollection(LazyCollectionOption.FALSE)
     public Collection<Friend> getUsersByUserId() {
         return usersByUserId;
     }
@@ -165,7 +164,6 @@ public class User implements Serializable {
     }
 
     @OneToMany(mappedBy = "friendId")
-    @LazyCollection(LazyCollectionOption.FALSE)
     public Collection<Friend> getUsersByFriendId() {
         return usersByFriendId;
     }

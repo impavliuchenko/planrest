@@ -9,7 +9,7 @@ start-state="main">
         <var name="userPage" class="com.planrest.objects.UserPageComponent"/>
 
         <on-entry>
-            <evaluate expression="userDAOImpl.getUniqueById(1)"
+            <evaluate expression="userDAOImpl.readUniqueById(1)"
                       result="viewScope.user" result-type="com.planrest.entities.User"/>
             <set name="userPageComponent.user" value="user"/>
             <set name="conversationScope.userName" value="user"/>
@@ -54,7 +54,6 @@ start-state="main">
             <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <set name="userPageComponent.userwallRestaurantwalls" value="userwallRestaurantwalls"/>
-            <!--<render fragments="yo"/>-->
         </transition>
 
         <transition on="planPosts">
@@ -69,6 +68,14 @@ start-state="main">
                       result="viewScope.restaurantWallUsers"/>
             <evaluate expression="userWallService.splitDialog()"/>
             <!--<render fragments="restaurantPostsForm:splitDialog"/>-->
+        </transition>
+
+        <transition on="searchRestaurant" to="search">
+            <set name="flashScope.isRestaurantSearch" value="true"/>
+        </transition>
+
+        <transition on="searchUser" to="search">
+            <set name="flashScope.isRestaurantSearch" value="false"/>
         </transition>
 
     </view-state>
@@ -130,6 +137,14 @@ start-state="main">
                       result="viewScope.restaurantWallUsers"/>
             <evaluate expression="userWallService.splitDialog()"/>
             <!--<render fragments="restaurantPostsForm:splitDialog"/>-->
+        </transition>
+
+        <transition on="searchRestaurant" to="search">
+            <set name="flashScope.isRestaurantSearch" value="true"/>
+        </transition>
+
+        <transition on="searchUser" to="search">
+            <set name="flashScope.isRestaurantSearch" value="false"/>
         </transition>
 
     </view-state>
@@ -205,6 +220,24 @@ start-state="main">
             <set name="flowScope.friend" value="restaurantPage.user"/>
         </transition>
 
+        <transition on="searchRestaurant" to="search">
+            <set name="flashScope.isRestaurantSearch" value="true"/>
+        </transition>
+
+        <transition on="searchUser" to="search">
+            <set name="flashScope.isRestaurantSearch" value="false"/>
+        </transition>
+
     </view-state>
+
+    <subflow-state id="search" subflow="search">
+
+        <input name="isRestaurantSearch"/>
+        <output name="restaurant"/>
+
+        <transition on="home" to="main"/>
+        <transition on="user" to="friend"/>
+        <transition on="restaurant" to="restaurant"/>
+    </subflow-state>
 
 </flow>

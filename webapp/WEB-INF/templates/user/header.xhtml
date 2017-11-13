@@ -19,12 +19,16 @@
                     <ui:include src="/WEB-INF/templates/user/locales.xhtml"/>
                 </div>
 
-                <div class="social">
-                    <a> <h:graphicImage library="images" name="vk.jpg" width="16" height="16"/></a>
-                    <a> <h:graphicImage library="images" name="facebook.jpg" width="16" height="16"/></a>
+                <div class="search-header">
+                    <h:form>
+                    <!--<a> <h:graphicImage library="images" name="vk.jpg" width="16" height="16"/></a>-->
+                    <!--<a> <h:graphicImage library="images" name="facebook.jpg" width="16" height="16"/></a>-->
+                        <h:commandLink value="Search Restaurant" action="searchRestaurant"/>
+                        <h:commandLink value="Search User" action="searchUser"/>
+                    </h:form>
                 </div>
 
-                <div class="aut">
+                <div class="out">
                     <h:form>
                         <a href="${request.contextPath}/app/logout">"${msg.exit}"</a>
                         <h:commandLink value="#{userName.name}" action="toMain"/>

@@ -33,14 +33,10 @@ public class CrudDAOImpl<T, PK extends Serializable> implements Serializable, Cr
     }
 
     @Override
-    public T getUniqueById(PK id) {
+    public T readUniqueById(PK id) {
         return this.sessionFactory.getCurrentSession().get(entityClass, id);
     }
 
-    @Override
-    public List<T> getAll() {
-        return (List<T>) this.sessionFactory.getCurrentSession().createQuery("FROM " + entityClass).list();
-    }
 
     @Override
     public void update(T transientObject) {

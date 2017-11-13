@@ -51,10 +51,16 @@ body {
 .language img { float: left; margin-right: 10px; }
 .social { float: left; margin-top: 10px; margin-left: 79px; }
 .social img { float: left; margin-right: 8px; }
-.aut { float: right; width: 255px; font-size: 14px; }
-.aut p { float: left; background:url("#{resource['images:user.jpg']}") no-repeat; padding-left: 25px; color: #fff; margin-top: 10px;}
-.aut a { float: right; color: #fff; margin-top: 10px; margin-right: 40px; }
-.aut a:hover {text-decoration: none;}
+
+.out { float: right; width: 255px; font-size: 14px; }
+.out p { float: left; background:url("#{resource['images:user.jpg']}") no-repeat; padding-left: 25px; color: #fff; margin-top: 10px;}
+.out a { float: right; color: #fff; margin-top: 10px; margin-right: 40px; }
+.out a:hover {text-decoration: none;}
+
+.search-header { float: left; margin-top: 10px; margin-left: 79px;  }
+.search-header p { float: left; background:url("#{resource['images:user.jpg']}") no-repeat; padding-left: 25px; color: #fff; margin-top: 10px;}
+.search-header a { float: left; color: #fff; margin-right: 40px; }
+.search-header a:hover {text-decoration: none;}
 
 .logo { float: left; margin-top: 24px; }
 .menu { float: left; margin-top: 30px; font-size: 14px; margin-left: 90px; width: 46%;
@@ -64,6 +70,7 @@ body {
 .feedback { display: block; float: right; background:url("#{resource['images:feedback.jpg']}") no-repeat 0% 50%; padding-left: 24px; font-size: 14px; color: #1091c6; margin-top: 30px; }
 .feedback:hover {text-decoration: none;}
 .search { margin-top: 30px; position: relative;}
+.search_line{margin-bottom: 16px}
 
 .dropdown{
     float: right;
@@ -110,7 +117,7 @@ body {
 .search .button {float: right; width: 100px; height: 40px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5564d; border: none; }
 .info .button {margin-left: 10px; width: 100px; height: 40px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5564d; border: none; }
 .info .visitorsButton {margin-bottom: 10px; width: 690px; border-radius: 3px; color: #fff; font-size: 16px; cursor: pointer; background: #d5c39d; border: none;}
-.search-text { color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 610px;}
+.search-text { color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 196px;}
 .search-text:focus {border: 1px solid #30b0e1; box-shadow: 0px 0px 5px 0px #abdfed;}
 .restaurant-wall-send-comment {color: #838383; font-size: 14px; border-radius: 5px; border: 1px solid #e2e2e2; float: left; padding: 12px 0px 12px 38px; width: 540px;}
 .restaurant-wall-send-comment:focus {border: 1px solid #30b0e1; box-shadow: 0px 0px 5px 0px #abdfed;}
@@ -127,6 +134,8 @@ body {
 
 /* content */
 .content { overflow: hidden; margin-top: 27px; background: #fff; border-radius: 5px; }
+.search{margin: 20px;}
+.search-results{margin:2px;}
 .left-menu ul {padding-top: 20px; font-size: 14px;}
 .left-menu { float: left; width: 180px; font-size: 14px;}
 .left-menu li {margin-bottom: 5px;}
@@ -141,10 +150,16 @@ body {
 
 .item { height:100%; width: 100%; padding-bottom: 18px; overflow: hidden; float: left; }
 .item img {float: left; margin-top: 4px;margin-bottom: 10px;}
-.item .info {overflow: hidden; padding-left: 30px; padding-right: 32px;}
+.item .info {overflow: hidden; padding-left: 30px; padding-right: 32px; margin-top: 10px;}
+.item .info td {font-weight: 600; padding: 10px; font-size: 18px;}
 .item .book_name td {padding: 12px; font-size: 14px}
+
+
 .item .info .title {color: #1091c6; font-size: 18px;}
 .item .info .title:hover {text-decoration: none;}
+
+.item .info .search_title {color: #1091c6; font-size: 22px;}
+.item .info .search_title:hover {text-decoration: none;}
 /*.item .info span { color: #000; border-bottom: 1px solid #000; margin-top: 13px; margin-bottom: 13px; display: inline-block; }*/
 .item .info p {color: #666; margin-bottom: 8px;}
 .item .info p a {color: #666;}
@@ -253,6 +268,7 @@ body {
     float:left;
     width: 100%;
     text-align: right;
+    margin-bottom: 16px;
 }
 
 .search_type{
@@ -286,7 +302,11 @@ body {
 .image-info{
     float: left;
     width: 240px;
+}
 
+.image_search_info{
+    float: left;
+    width: 330px;
 }
 
 

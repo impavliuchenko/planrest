@@ -7,9 +7,7 @@ public interface CrudDAO <T, PK extends Serializable> {
 
     T add(T newInstance);
 
-    T getUniqueById(PK id);
-
-    List<T> getAll();
+    T readUniqueById(PK id);
 
     void update(T transientObject);
 

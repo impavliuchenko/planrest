@@ -7,11 +7,13 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Transactional
 @Repository
 public class RestaurantLocationDAOImpl extends CrudDAOImpl<Restaurantlocation, Integer> implements Serializable, RestaurantLocationDAO {
     private static final long serialVersionUID = 1L;
+
     @Override
     public Restaurantlocation getRestaurantLocationByRestaurantId(int id) {
         Query query = sessionFactory.getCurrentSession()
@@ -19,5 +21,11 @@ public class RestaurantLocationDAOImpl extends CrudDAOImpl<Restaurantlocation, I
                         "INNER JOIN rrl.restaurantLocationId rl WHERE r.id = :id");
         query.setParameter("id", id);
         return (Restaurantlocation) query.uniqueResult();
+    }
+
+    @Override
+    public List<String> getAllRestaurantLocations() {
+        return (List<String>) sessionFactory.getCurrentSession()
+                .createQuery("SELECT rl.locationName FROM Restaurantlocation rl").list();
     }
 }

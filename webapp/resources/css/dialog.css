@@ -55,9 +55,11 @@ body {
 .button-right .cancel {width: 130px; font-size: 15px !important;}
 .button-right .save {width: 130px; font-size: 15px !important;}
 
-select,
-.selectBox {
-    width: 279px; height: 36px; border: 1px solid #e2e2e2; border-radius: 3px; font-size: 16px; color: #000; box-shadow: inset 0 0 7px #e2e2e2; position: relative;
+select, .selectBox {
+    width: 60px; height: 40px; margin-left: 4px; border: 1px solid #e2e2e2; border-radius: 3px; font-size: 16px; color: #000; box-shadow: inset 0 0 7px #e2e2e2; position: relative;
+}
+.search_line select, .search_line .selectBox{
+    width: 136px; float: left; height: 40px; margin-left: 4px; border: 1px solid #e2e2e2; border-radius: 3px; font-size: 16px; color: #000; box-shadow: inset 0 0 7px #e2e2e2; position: relative;
 }
 .selectBox:hover {
     color: #000;
