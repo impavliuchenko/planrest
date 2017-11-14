@@ -12,19 +12,9 @@ import java.util.List;
 @Transactional
 @Repository
 public class RestaurantTypeDAOImpl extends CrudDAOImpl<Restauranttype, Integer> implements Serializable, RestaurantTypeDAO {
-    @Override
-    public Restauranttype getRestaurantTypeByRestaurantId(int id) {
-        Query query = sessionFactory.getCurrentSession()
-                .createQuery("SELECT rt FROM RestaurantRestauranttype rrt " +
-                        "INNER JOIN rrt.restaurantTypeId rt " +
-                        "INNER JOIN rrt.restaurantId r " +
-                        "WHERE r.id = :id");
-        query.setParameter("id", id);
-        return (Restauranttype) query.uniqueResult();
-    }
 
     @Override
-    public List<String> getAllRestaurantTypes() {
+    public List<String> getAllRestaurantTypeNames() {
         return (List<String>) sessionFactory.getCurrentSession()
                 .createQuery("SELECT rt.typeName FROM Restauranttype rt").list();
     }

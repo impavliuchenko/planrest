@@ -44,13 +44,13 @@
 
                     <div class="comment">
 
-                    <span><strong>#{b.userWallId.date}</strong></span>
+                    <span><strong>#{b.date}</strong></span>
                         <h:commandButton action="delete" image="#{resource['images:close.png']}" style="float: right">
-                            <f:setPropertyActionListener value="#{b.userWallId.id}" target="#{userPage.userWallId}"/>
+                            <f:setPropertyActionListener value="#{b.id}" target="#{userPage.userWallId}"/>
                             <f:setPropertyActionListener value="#{b.restaurantWallId.id}" target="#{userPage.restaurantWallId}"/>
                             <!--<f:ajax render="@form"/>-->
                         </h:commandButton>
-                    <h1 style="margin: 5px;"> #{b.userWallId.comment}</h1>
+                    <h1 style="margin: 5px;"> #{b.comment}</h1>
                     </div>
 
 
@@ -95,8 +95,8 @@
                     <ul>
                         <ui:repeat value="${restaurantWallUsers}" var="f">
                             <li>
-                                <h:commandLink id="menuView" value="${f.name}" action="toFriend">
-                                    <f:setPropertyActionListener value="#{f}" target="#{userPage.user}" />
+                                <h:commandLink id="menuView" value="${f.userId.name}" action="toFriend">
+                                    <f:setPropertyActionListener value="#{f.userId}" target="#{userPage.user}" />
                                 </h:commandLink>
                             </li>
                         </ui:repeat>

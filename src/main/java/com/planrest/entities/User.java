@@ -20,18 +20,15 @@ public class User implements Serializable {
     private String sex;
     private Date birthday;
     private byte[] image;
+    private Location locationId;
     private Collection<Dialogue> dialoguesById;
     private Collection<Friend> usersByUserId;
     private Collection<Friend> usersByFriendId;
     private Collection<Restaurantrating> restaurantratingsById;
-    private Collection<UserDialogue> userDialoguesById;
-    private Collection<UserRestaurant> userRestaurantsById;
     private Collection<UserRole> userRolesById;
-    private Collection<UserUserlocation> userUserlocationsById;
     private Collection<Userrating> userratingsById;
     private Collection<Userrating> userratingsById_0;
     private Collection<Userwall> userwallsById;
-    private Collection<RestaurantwallUser> restaurantwallUsersById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -113,6 +110,16 @@ public class User implements Serializable {
         this.image = image;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "location_id", referencedColumnName = "id", nullable = false)
+    public Location getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Location locationId) {
+        this.locationId = locationId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -145,7 +152,7 @@ public class User implements Serializable {
         return result;
     }
 
-    @OneToMany(mappedBy = "userCompanionId")
+    @OneToMany(mappedBy = "userId")
     public Collection<Dialogue> getDialoguesById() {
         return dialoguesById;
     }
@@ -154,14 +161,6 @@ public class User implements Serializable {
         this.dialoguesById = dialoguesById;
     }
 
-    @OneToMany(mappedBy = "userId")
-    public Collection<Friend> getUsersByUserId() {
-        return usersByUserId;
-    }
-
-    public void setUsersByUserId(Collection<Friend> friendsById) {
-        this.usersByUserId = friendsById;
-    }
 
     @OneToMany(mappedBy = "friendId")
     public Collection<Friend> getUsersByFriendId() {
@@ -182,39 +181,12 @@ public class User implements Serializable {
     }
 
     @OneToMany(mappedBy = "userId")
-    public Collection<UserDialogue> getUserDialoguesById() {
-        return userDialoguesById;
-    }
-
-    public void setUserDialoguesById(Collection<UserDialogue> userDialoguesById) {
-        this.userDialoguesById = userDialoguesById;
-    }
-
-    @OneToMany(mappedBy = "userId")
-    public Collection<UserRestaurant> getUserRestaurantsById() {
-        return userRestaurantsById;
-    }
-
-    public void setUserRestaurantsById(Collection<UserRestaurant> userRestaurantsById) {
-        this.userRestaurantsById = userRestaurantsById;
-    }
-
-    @OneToMany(mappedBy = "userId")
     public Collection<UserRole> getUserRolesById() {
         return userRolesById;
     }
 
     public void setUserRolesById(Collection<UserRole> userRolesById) {
         this.userRolesById = userRolesById;
-    }
-
-    @OneToMany(mappedBy = "userId")
-    public Collection<UserUserlocation> getUserUserlocationsById() {
-        return userUserlocationsById;
-    }
-
-    public void setUserUserlocationsById(Collection<UserUserlocation> userUserlocationsById) {
-        this.userUserlocationsById = userUserlocationsById;
     }
 
     @OneToMany(mappedBy = "userReceivingId")
@@ -245,12 +217,4 @@ public class User implements Serializable {
         this.userwallsById = userwallsById;
     }
 
-    @OneToMany(mappedBy = "userId")
-    public Collection<RestaurantwallUser> getRestaurantwallUsersById() {
-        return restaurantwallUsersById;
-    }
-
-    public void setRestaurantwallUsersById(Collection<RestaurantwallUser> restaurantwallUsersById) {
-        this.restaurantwallUsersById = restaurantwallUsersById;
-    }
 }

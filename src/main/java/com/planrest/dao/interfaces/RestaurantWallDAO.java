@@ -1,7 +1,6 @@
 package com.planrest.dao.interfaces;
 
 import com.planrest.entities.Restaurantwall;
-import com.planrest.entities.UserwallRestaurantwall;
 
 import java.util.List;
 

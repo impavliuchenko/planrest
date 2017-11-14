@@ -93,8 +93,8 @@
                 <ul>
                     <ui:repeat value="${restaurantWallUsers}" var="f">
                         <li>
-                            <h:commandLink id="dialogUsers" value="${f.name}" action="toFriend">
-                                <f:setPropertyActionListener value="#{f}" target="#{restaurantPage.user}" />
+                            <h:commandLink id="dialogUsers" value="${f.userId.name}" action="toFriend">
+                                <f:setPropertyActionListener value="#{f.userId}" target="#{restaurantPage.user}" />
                             </h:commandLink>
                         </li>
                     </ui:repeat>

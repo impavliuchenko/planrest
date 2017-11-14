@@ -13,8 +13,7 @@ public class Restaurantwall implements Serializable {
     private String comment;
     private byte[] image;
     private Restaurant restaurantId;
-    private Collection<UserwallRestaurantwall> userwallRestaurantwallsById;
-    private Collection<RestaurantwallUser> restaurantwallUsersById;
+    private Collection<Userwall> userwallsById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -94,22 +93,13 @@ public class Restaurantwall implements Serializable {
         return result;
     }
 
-
     @OneToMany(mappedBy = "restaurantWallId")
-    public Collection<UserwallRestaurantwall> getUserwallRestaurantwallsById() {
-        return userwallRestaurantwallsById;
+    public Collection<Userwall> getUserwallsById() {
+        return userwallsById;
     }
 
-    public void setUserwallRestaurantwallsById(Collection<UserwallRestaurantwall> userwallRestaurantwallsById) {
-        this.userwallRestaurantwallsById = userwallRestaurantwallsById;
+    public void setUserwallsById(Collection<Userwall> userwallsById) {
+        this.userwallsById = userwallsById;
     }
 
-    @OneToMany(mappedBy = "restaurantWallId")
-    public Collection<RestaurantwallUser> getRestaurantwallUsersById() {
-        return restaurantwallUsersById;
-    }
-
-    public void setRestaurantwallUsersById(Collection<RestaurantwallUser> restaurantwallUsersById) {
-        this.restaurantwallUsersById = restaurantwallUsersById;
-    }
 }

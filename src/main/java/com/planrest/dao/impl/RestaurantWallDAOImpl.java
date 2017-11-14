@@ -2,7 +2,6 @@ package com.planrest.dao.impl;
 
 import com.planrest.dao.interfaces.RestaurantWallDAO;
 import com.planrest.entities.Restaurantwall;
-import com.planrest.entities.UserwallRestaurantwall;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +23,4 @@ public class RestaurantWallDAOImpl extends CrudDAOImpl<Restaurantwall, Integer> 
         query.setParameter("id", id);
         return (List<Restaurantwall>) query.list();
     }
-
-
 }

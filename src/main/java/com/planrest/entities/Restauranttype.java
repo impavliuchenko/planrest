@@ -9,7 +9,7 @@ public class Restauranttype implements Serializable {
     private static final long serialVersionUID = 1L;
     private int id;
     private String typeName;
-    private Collection<RestaurantRestauranttype> restaurantRestaurantTypeById;
+    private Collection<Restaurant> restaurantsById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -54,11 +54,11 @@ public class Restauranttype implements Serializable {
     }
 
     @OneToMany(mappedBy = "restaurantTypeId")
-    public Collection<RestaurantRestauranttype> getRestaurantRestaurantTypeById() {
-        return restaurantRestaurantTypeById;
+    public Collection<Restaurant> getRestaurantsById() {
+        return restaurantsById;
     }
 
-    public void setRestaurantRestaurantTypeById(Collection<RestaurantRestauranttype> restaurantRestaurantTypeById) {
-        this.restaurantRestaurantTypeById = restaurantRestaurantTypeById;
+    public void setRestaurantsById(Collection<Restaurant> restaurantsById) {
+        this.restaurantsById = restaurantsById;
     }
 }

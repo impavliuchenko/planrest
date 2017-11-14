@@ -7,25 +7,125 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75647cc2-373f-436d-b309-cfc70c146deb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/objects/UserPageComponent.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/objects/UserPageComponent.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/LocationDAO.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/RestaurantLocationDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/UserLocationDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/UserWallDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/interfaces/RestaurantLocationDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/interfaces/UserLocationDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/interfaces/UserWallDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/RestaurantRestaurantlocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/RestaurantRestauranttype.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Restaurantlocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/RestaurantwallUser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/UserDialogue.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/UserRestaurant.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/UserUserlocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Userlocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/UserwallRestaurantwall.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserLocationDAOImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserWallDAOImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantLocationDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserLocationDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserWallDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/RestaurantRestaurantlocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/RestaurantRestauranttype.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/RestaurantwallUser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/UserDialogue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/UserRestaurant.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/UserUserlocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Userlocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/UserwallRestaurantwall.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/RestaurantLocationDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/UserLocationDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/UserWallDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/interfaces/RestaurantLocationDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/interfaces/UserLocationDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/interfaces/UserWallDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/RestaurantRestaurantlocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/RestaurantRestauranttype.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/Restaurantlocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/RestaurantwallUser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/UserDialogue.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/UserRestaurant.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/UserUserlocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/Userlocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/UserwallRestaurantwall.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantLocationDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/LocationDAOImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurantlocation.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Location.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/RestaurantTypeDAOImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/RestaurantTypeDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/RestaurantWallDAOImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/RestaurantWallDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/UserDAOImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/impl/UserDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/interfaces/RestaurantTypeDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/interfaces/RestaurantTypeDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/interfaces/UserDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/dao/interfaces/UserDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Dialogue.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Dialogue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Restaurant.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Restaurant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Restauranttype.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Restauranttype.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Restaurantwall.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Restaurantwall.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/User.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Userwall.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/entities/Userwall.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/objects/RestaurantPageComponent.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/objects/RestaurantPageComponent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/services/RestaurantSearchService.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/services/RestaurantSearchService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/services/RestaurantWallService.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/services/RestaurantWallService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/services/UserSearchService.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/services/UserSearchService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/services/UserWallService.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/services/UserWallService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/servlets/ShowUserPageImage.class" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/com/planrest/servlets/ShowUserPageImage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/objects/UserPageComponent.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/objects/UserPageComponent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/RestaurantTypeDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/RestaurantTypeDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/RestaurantWallDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/RestaurantWallDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/UserDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/dao/impl/UserDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/interfaces/RestaurantTypeDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/dao/interfaces/RestaurantTypeDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/dao/interfaces/UserDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/dao/interfaces/UserDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/Dialogue.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/entities/Dialogue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/Restaurant.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/entities/Restaurant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/Restauranttype.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/entities/Restauranttype.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/Restaurantwall.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/entities/Restaurantwall.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/User.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/entities/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/entities/Userwall.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/entities/Userwall.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/objects/RestaurantPageComponent.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/objects/RestaurantPageComponent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/services/RestaurantSearchService.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/services/RestaurantSearchService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/services/RestaurantWallService.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/services/RestaurantWallService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/services/UserSearchService.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/services/UserSearchService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/services/UserWallService.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/services/UserWallService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/planrest/servlets/ShowUserPageImage.class" afterPath="$PROJECT_DIR$/target/classes/com/planrest/servlets/ShowUserPageImage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/06d870fd-236b-45a3-928a-1133a0da5a79.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/06d870fd-236b-45a3-928a-1133a0da5a79.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/5252d6dc-9fa2-44fb-ab04-6b1d432420c5.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5252d6dc-9fa2-44fb-ab04-6b1d432420c5.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/a6f317b7-bdab-4450-a7b7-0b314d61e830.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/a6f317b7-bdab-4450-a7b7-0b314d61e830.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/classes/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/flows/main.xml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/flows/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/flows/search.xml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/flows/search.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/templates/restaurant/information.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/templates/restaurant/information.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/templates/user/information.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/templates/user/information.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/views/main.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/views/main.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/views/restaurant.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/views/restaurant.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/views/restaurantSearch.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/views/restaurantSearch.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/views/userSearch.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/PlanRest_war_exploded/WEB-INF/views/userSearch.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantTypeDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantTypeDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantWallDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantWallDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantRatingDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantRatingDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantTypeDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantTypeDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantWallDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantWallDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Dialogue.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Dialogue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurant.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restauranttype.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restauranttype.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurantwall.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurantwall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/entities/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Userwall.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/entities/Userwall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/objects/RestaurantPageComponent.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/objects/RestaurantPageComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/objects/UserPageComponent.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/objects/UserPageComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantSearchService.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantSearchService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantWallService.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantWallService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/services/UserSearchService.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/services/UserSearchService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/services/UserWallService.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/services/UserWallService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowRestaurantPageImage.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowRestaurantPageImage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowUserPageImage.java" afterPath="$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowUserPageImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/flows/main.xml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/flows/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/flows/search.xml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/flows/search.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/templates/restaurant/information.xhtml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/templates/restaurant/information.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/templates/user/information.xhtml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/templates/user/information.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/views/main.xhtml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/views/main.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/views/restaurant.xhtml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/views/restaurant.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/resources/css/main.css" afterPath="$PROJECT_DIR$/webapp/resources/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/views/restaurantSearch.xhtml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/views/restaurantSearch.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/views/userSearch.xhtml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/views/userSearch.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,12 +156,6 @@
       </path>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="planrest@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="planrest" type="e3449647:DbNodeDescriptor" />
-        <item name="restaurant" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="sessionFactory/Hibernate" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
@@ -69,33 +163,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RestaurantSearchService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantSearchService.java">
+      <file leaf-file-name="CrudDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/CrudDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1635">
-              <caret line="125" column="9" lean-forward="false" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+            <state relative-caret-position="178">
+              <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserSearchService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/UserSearchService.java">
+      <file leaf-file-name="FriendDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/FriendDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserWallService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/UserWallService.java">
+      <file leaf-file-name="LocationDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/LocationDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="192" column="5" lean-forward="true" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
+            <state relative-caret-position="165">
+              <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestaurantDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestaurantSearchService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantSearchService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-87">
+              <caret line="113" column="65" lean-forward="false" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestaurantTypeDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantTypeDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestaurantWallDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantWallDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocationDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/LocationDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRatingDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserRatingDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -127,57 +289,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/restaurant/friends.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantAddressDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantAddressDAOImpl.java" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/restaurant/information.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/objects/ResaurantSearchComponent.java" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/user/search.xhtml" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/user/userPage.xhtml" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/user/information.xhtml" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/user/header.xhtml" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/search/search.xhtml" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/search/searchPage.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurantlocation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/objects/SearchComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/CrudDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/CrudDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantLocationDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowSearchRestaurantImage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/services/SearchRestaurantService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantTypeDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantLocationDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantTypeDAOImpl.java" />
         <option value="$PROJECT_DIR$/webapp/resources/css/dialog.css" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/views/restaurantSearch.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/objects/RestaurantSearchComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserLocationDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserLocationDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowSearchUserImage.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/objects/UserSearchComponent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/services/UserSearchService.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/locales/messages.properties" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/flows/search.xml" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/views/userSearch.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/objects/UserPageComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowUserPageImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/services/UserWallService.java" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/views/main.xhtml" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/views/restaurant.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/objects/RestaurantPageComponent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantWallService.java" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/flows/main.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowRestaurantPageImage.java" />
         <option value="$PROJECT_DIR$/webapp/resources/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/Userwall.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantWallService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserWallDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserWallDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/objects/RestaurantPageComponent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/Location.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restauranttype.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/Dialogue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurantwall.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantLocationDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantLocationDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/LocationDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/LocationDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantTypeDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantTypeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantSearchService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/services/UserSearchService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/services/UserWallService.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/restaurant/information.xhtml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/templates/user/information.xhtml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/views/main.xhtml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/views/restaurant.xhtml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/views/restaurantSearch.xhtml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/views/userSearch.xhtml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/flows/main.xml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/flows/search.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantWallDAOImpl.java" />
       </list>
     </option>
   </component>
@@ -648,12 +810,12 @@
       <workItem from="1510317425083" duration="33256000" />
       <workItem from="1510404590516" duration="27994000" />
       <workItem from="1510493185852" duration="32243000" />
-      <workItem from="1510573134114" duration="10803000" />
+      <workItem from="1510573134114" duration="25097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239728000" />
+    <option name="totallyTimeSpent" value="254022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -666,6 +828,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="712" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -678,7 +841,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.184765" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -689,10 +852,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24555735" sideWeight="0.2919708" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.7080292" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25767368" sideWeight="0.30405405" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.6959459" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2657512" sideWeight="0.40481928" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -700,7 +864,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -716,246 +879,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="75" />
+      <option name="time" value="80" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/UserwallRestaurantwall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Userwall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-668">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Friend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/RestaurantRestaurantlocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Restauranttype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/templates/restaurant/information.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="45" selection-end-column="28" />
-          <folding>
-            <marker date="1510360300000" expanded="true" signature="674:749" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurantlocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/CrudDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantWallDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/FriendDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/CrudDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantTypeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantRatingDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantLocationDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantRatingDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="28" column="56" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="28" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/templates/search/searchPage.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/resources/css/dialog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/templates/user/header.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="77" lean-forward="false" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/views/restaurantSearch.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="110" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/objects/RestaurantSearchComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1650#1651#0" expanded="false" />
-            <element signature="e#1683#1684#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserRatingDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserLocationDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserLocationDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowSearchRestaurantImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="91" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="91" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1825#1944#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -969,8 +897,8 @@
         <state relative-caret-position="136">
           <caret line="35" column="129" lean-forward="false" selection-start-line="35" selection-start-column="110" selection-end-line="35" selection-end-column="129" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1826#1945#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1826#1945#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -990,32 +918,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/templates/user/information.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="38" column="93" lean-forward="false" selection-start-line="38" selection-start-column="93" selection-end-line="38" selection-end-column="105" />
-          <folding>
-            <marker date="1510444101000" expanded="true" signature="667:742" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Userlocation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="e#4874#4875#0" expanded="false" />
-            <element signature="e#4912#4913#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1030,82 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/views/userSearch.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="23" column="120" lean-forward="false" selection-start-line="23" selection-start-column="120" selection-end-line="23" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/flows/search.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="90" column="28" lean-forward="false" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/views/restaurant.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="62" column="30" lean-forward="false" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/views/main.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowUserPageImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/objects/UserPageComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/objects/RestaurantPageComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="56" column="51" lean-forward="false" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
-          <folding>
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1178#1179#0" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantWallService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="96" column="19" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/flows/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="162" column="64" lean-forward="true" selection-start-line="162" selection-start-column="64" selection-end-line="162" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/resources/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -1116,50 +947,389 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowRestaurantPageImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
+        <state relative-caret-position="229">
           <caret line="40" column="73" lean-forward="false" selection-start-line="40" selection-start-column="73" selection-end-line="40" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantTypeDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/servlets/ShowUserPageImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="317">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantLocationDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/objects/UserPageComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="150">
+          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantSearchService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/objects/RestaurantPageComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="125" column="9" lean-forward="false" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+        <state relative-caret-position="375">
+          <caret line="40" column="56" lean-forward="false" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+          <folding>
+            <element signature="e#1136#1137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.1.RELEASE/spring-aop-4.3.1.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/UserRestaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Dialogue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Friend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+          <folding>
+            <element signature="e#1454#1455#0" expanded="true" />
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1570#1571#0" expanded="true" />
+            <element signature="e#1624#1625#0" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="e#1742#1743#0" expanded="true" />
+            <element signature="e#1802#1803#0" expanded="true" />
+            <element signature="e#1844#1845#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-266">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurantrating.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Restauranttype.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="e#1384#1385#0" expanded="true" />
+            <element signature="e#1422#1423#0" expanded="true" />
+            <element signature="e#1500#1501#0" expanded="true" />
+            <element signature="e#1554#1555#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurantwall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-341">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/RestaurantTypeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserLocationDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserWallDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/UserSearchService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+        <state relative-caret-position="-33">
+          <caret line="101" column="53" lean-forward="false" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantWallService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-821">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/templates/restaurant/information.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="35" column="113" lean-forward="false" selection-start-line="35" selection-start-column="113" selection-end-line="35" selection-end-column="113" />
+          <folding>
+            <marker date="1510691120000" expanded="true" signature="674:749" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/templates/user/information.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="108" lean-forward="false" selection-start-line="39" selection-start-column="108" selection-end-line="39" selection-end-column="108" />
+          <folding>
+            <marker date="1510691120000" expanded="true" signature="667:742" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/UserWallService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="192" column="5" lean-forward="true" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
+        <state relative-caret-position="-935">
+          <caret line="81" column="38" lean-forward="false" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Userwall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/entities/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="22" column="43" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/views/restaurant.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/views/main.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="98" column="82" lean-forward="false" selection-start-line="98" selection-start-column="82" selection-end-line="98" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/views/restaurantSearch.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="79" column="89" lean-forward="false" selection-start-line="79" selection-start-column="89" selection-end-line="79" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/views/userSearch.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="998">
+          <caret line="87" column="79" lean-forward="true" selection-start-line="87" selection-start-column="79" selection-end-line="87" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/flows/search.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="63" column="65" lean-forward="false" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/flows/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3075">
+          <caret line="205" column="0" lean-forward="true" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="57" lean-forward="false" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantRatingDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantTypeDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserRatingDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserWallDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/interfaces/LocationDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/CrudDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/FriendDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/LocationDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/RestaurantWallDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/dao/impl/UserDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/planrest/services/RestaurantSearchService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="113" column="65" lean-forward="false" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
           <folding />
         </state>
       </provider>

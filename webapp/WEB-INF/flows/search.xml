@@ -30,10 +30,6 @@
             result="viewScope.restaurantsSearchList"/>
             <evaluate expression="restaurantSearchService.getSearchImages(restaurantsSearchList)"
                       result="restaurantSearchComponent.searchImages"/>
-            <evaluate expression="restaurantSearchService.getTypesByRestaurants(restaurantsSearchList)"
-                      result="viewScope.restaurantTypes"/>
-            <evaluate expression="restaurantSearchService.getLocationsByRestaurants(restaurantsSearchList)"
-                      result="viewScope.restaurantLocations"/>
             <evaluate expression="restaurantSearchService.getAverageRestaurantRating(restaurantsSearchList)"
                       result="viewScope.restaurantAverageRatings"/>
         </transition>
@@ -66,8 +62,6 @@
                       result="viewScope.usersSearchList"/>
             <evaluate expression="userSearchService.getSearchImages(usersSearchList)"
                       result="userSearchComponent.searchImages"/>
-            <evaluate expression="userSearchService.getLocationsByUsers(usersSearchList)"
-                      result="viewScope.userLocations"/>
             <evaluate expression="userSearchService.getAverageUserRating(usersSearchList)"
                       result="viewScope.userAverageRatings"/>
         </transition>

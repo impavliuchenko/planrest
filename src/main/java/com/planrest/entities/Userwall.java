@@ -13,7 +13,7 @@ public class Userwall implements Serializable {
     private String comment;
     private byte[] image;
     private User userId;
-    private Collection<UserwallRestaurantwall> userwallRestaurantwallsById;
+    private Restaurantwall restaurantWallId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,6 +67,16 @@ public class Userwall implements Serializable {
         this.userId = userByUserId;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "restaurant_wall_id", referencedColumnName = "id", nullable = false)
+    public Restaurantwall getRestaurantWallId() {
+        return restaurantWallId;
+    }
+
+    public void setRestaurantWallId(Restaurantwall restaurantWallId) {
+        this.restaurantWallId = restaurantWallId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -93,12 +103,4 @@ public class Userwall implements Serializable {
         return result;
     }
 
-    @OneToMany(mappedBy = "userWallId")
-    public Collection<UserwallRestaurantwall> getUserwallRestaurantwallsById() {
-        return userwallRestaurantwallsById;
-    }
-
-    public void setUserwallRestaurantwallsById(Collection<UserwallRestaurantwall> userwallRestaurantwallsById) {
-        this.userwallRestaurantwallsById = userwallRestaurantwallsById;
-    }
 }

@@ -19,11 +19,10 @@ public class Restaurant implements Serializable {
     private String email;
     private byte[] image;
     private String address;
-    private Collection<RestaurantRestaurantlocation> restaurantRestaurantlocationsById;
+    private Location locationId;
+    private Restauranttype restaurantTypeId;
     private Collection<Restaurantrating> restaurantratingsById;
-    private Collection<RestaurantRestauranttype> restaurantRestauranttypesById;
     private Collection<Restaurantwall> restaurantwallsById;
-    private Collection<UserRestaurant> userRestaurantsById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -105,6 +104,26 @@ public class Restaurant implements Serializable {
         this.address = address;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "location_id", referencedColumnName = "id", nullable = false)
+    public Location getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Location locationId) {
+        this.locationId = locationId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "restaurant_type_id", referencedColumnName = "id", nullable = false)
+    public Restauranttype getRestaurantTypeId() {
+        return restaurantTypeId;
+    }
+
+    public void setRestaurantTypeId(Restauranttype restaurantTypeId) {
+        this.restaurantTypeId = restaurantTypeId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -135,14 +154,6 @@ public class Restaurant implements Serializable {
         return result;
     }
 
-    @OneToMany(mappedBy = "restaurantId")
-    public Collection<RestaurantRestaurantlocation> getRestaurantRestaurantlocationsById() {
-        return restaurantRestaurantlocationsById;
-    }
-
-    public void setRestaurantRestaurantlocationsById(Collection<RestaurantRestaurantlocation> restaurantRestaurantlocationsById) {
-        this.restaurantRestaurantlocationsById = restaurantRestaurantlocationsById;
-    }
 
     @OneToMany(mappedBy = "restaurantId")
     public Collection<Restaurantrating> getRestaurantratingsById() {
@@ -154,29 +165,11 @@ public class Restaurant implements Serializable {
     }
 
     @OneToMany(mappedBy = "restaurantId")
-    public Collection<RestaurantRestauranttype> getRestaurantRestauranttypesById() {
-        return restaurantRestauranttypesById;
-    }
-
-    public void setRestaurantRestauranttypesById(Collection<RestaurantRestauranttype> restaurantRestauranttypesById) {
-        this.restaurantRestauranttypesById = restaurantRestauranttypesById;
-    }
-
-    @OneToMany(mappedBy = "restaurantId")
     public Collection<Restaurantwall> getRestaurantwallsById() {
         return restaurantwallsById;
     }
 
     public void setRestaurantwallsById(Collection<Restaurantwall> restaurantwallsById) {
         this.restaurantwallsById = restaurantwallsById;
-    }
-
-    @OneToMany(mappedBy = "restaurantId")
-    public Collection<UserRestaurant> getUserRestaurantsById() {
-        return userRestaurantsById;
-    }
-
-    public void setUserRestaurantsById(Collection<UserRestaurant> userRestaurantsById) {
-        this.userRestaurantsById = userRestaurantsById;
     }
 }

@@ -15,24 +15,15 @@
         <mapping class="com.planrest.entities.Friend"/>
         <mapping class="com.planrest.entities.Message"/>
         <mapping class="com.planrest.entities.Restaurant"/>
-        <mapping class="com.planrest.entities.RestaurantRestaurantlocation"/>
-        <mapping class="com.planrest.entities.Restaurantlocation"/>
+        <mapping class="com.planrest.entities.Location"/>
         <mapping class="com.planrest.entities.Restaurantrating"/>
         <mapping class="com.planrest.entities.Restauranttype"/>
         <mapping class="com.planrest.entities.Restaurantwall"/>
         <mapping class="com.planrest.entities.Role"/>
         <mapping class="com.planrest.entities.User"/>
-        <mapping class="com.planrest.entities.UserDialogue"/>
-        <mapping class="com.planrest.entities.UserRestaurant"/>
         <mapping class="com.planrest.entities.UserRole"/>
-        <mapping class="com.planrest.entities.UserUserlocation"/>
-        <mapping class="com.planrest.entities.Userlocation"/>
         <mapping class="com.planrest.entities.Userrating"/>
         <mapping class="com.planrest.entities.Userwall"/>
-        <mapping class="com.planrest.entities.UserwallRestaurantwall"/>
-        <mapping class="com.planrest.entities.RestaurantwallUser"/>
-        <mapping class="com.planrest.entities.RestaurantRestauranttype"/>
-
 
     </session-factory>
 

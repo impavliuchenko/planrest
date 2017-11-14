@@ -17,18 +17,15 @@ start-state="main">
             <evaluate expression="userDAOImpl.getFriendsByUserId(user.id)"
                       result="viewScope.allFriends"/>
 
-            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(user.id)"
+            <evaluate expression="userWallService.getUserwallsDoneByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)"/>
 
-            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserIdCount(user.id)"
+            <evaluate expression="userWallService.getUserwallsDoneByUserIdCount(user.id)"
                       result="viewScope.userWallRestaurantWallsDoneCount" result-type="long"/>
 
-            <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserIdCount(user.id)"
+            <evaluate expression="userWallService.getUserwallsPlanByUserIdCount(user.id)"
                       result="viewScope.userWallRestaurantWallsPlanCount" result-type="long"/>
-
-            <evaluate expression="userLocationDAOImpl.getUserLocationByUserId(user.id)"
-                      result="viewScope.userLocation" result-type="com.planrest.entities.Userlocation"/>
             
             <evaluate expression="userRatingDAOImpl.getAverageRatingByUserId(user.id)"
                       result="viewScope.averageRating" result-type="double"/>
@@ -51,20 +48,20 @@ start-state="main">
         </transition>
 
         <transition on="donePosts">
-            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(user.id)"
+            <evaluate expression="userWallService.getUserwallsDoneByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)" />
         </transition>
 
         <transition on="planPosts">
-            <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserId(user.id)"
+            <evaluate expression="userWallService.getUserwallsPlanByUserId(user.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)"/>
         </transition>
 
         <transition on="showVisitors">
             <set name="viewScope.restaurantWallId" value="userPage.restaurantWallId"/>
-            <evaluate expression="userDAOImpl.getUsersByRestaurantWallId(restaurantWallId)"
+            <evaluate expression="userDAOImpl.getUserWallsByRestaurantWallId(restaurantWallId)"
                       result="viewScope.restaurantWallUsers"/>
             <evaluate expression="userWallService.splitDialog()"/>
             <!--<render fragments="restaurantPostsForm:splitDialog"/>-->
@@ -91,18 +88,15 @@ start-state="main">
             <evaluate expression="userDAOImpl.getFriendsByUserId(friend.id)"
                       result="viewScope.allFriends"/>
 
-            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(friend.id)"
+            <evaluate expression="userWallService.getUserwallsDoneByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)" />
 
-            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserIdCount(user.id)"
+            <evaluate expression="userWallService.getUserwallsDoneByUserIdCount(user.id)"
                       result="viewScope.userWallRestaurantWallsDoneCount" result-type="long"/>
 
-            <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserIdCount(user.id)"
+            <evaluate expression="userWallService.getUserwallsPlanByUserIdCount(user.id)"
                       result="viewScope.userWallRestaurantWallsPlanCount" result-type="long"/>
-
-            <evaluate expression="userLocationDAOImpl.getUserLocationByUserId(friend.id)"
-                      result="viewScope.userLocation" result-type="com.planrest.entities.Userlocation"/>
 
             <evaluate expression="userRatingDAOImpl.getAverageRatingByUserId(friend.id)"
                       result="viewScope.averageRating" result-type="double"/>
@@ -120,20 +114,20 @@ start-state="main">
         <transition on="toMain" to="main"/>
 
         <transition on="donePosts">
-            <evaluate expression="userWallService.getUserwallRestaurantwallsDoneByUserId(friend.id)"
+            <evaluate expression="userWallService.getUserwallsDoneByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)" />
         </transition>
 
         <transition on="planPosts">
-            <evaluate expression="userWallService.getUserwallRestaurantwallsPlanByUserId(friend.id)"
+            <evaluate expression="userWallService.getUserwallsPlanByUserId(friend.id)"
                       result="viewScope.userwallRestaurantwalls"/>
             <evaluate expression="userWallService.setUserWallImagesByList(userwallRestaurantwalls)" />
         </transition>
 
         <transition on="showVisitors">
             <set name="viewScope.restaurantWallId" value="userPage.restaurantWallId"/>
-            <evaluate expression="userDAOImpl.getUsersByRestaurantWallId(restaurantWallId)"
+            <evaluate expression="userDAOImpl.getUserWallsByRestaurantWallId(restaurantWallId)"
                       result="viewScope.restaurantWallUsers"/>
             <evaluate expression="userWallService.splitDialog()"/>
             <!--<render fragments="restaurantPostsForm:splitDialog"/>-->
@@ -171,12 +165,6 @@ start-state="main">
             <evaluate expression="restaurantWallService.getRestaurantWallsPlanByRestaurantIdCount(restaurant.id)"
                       result="viewScope.restaurantWallsPlanCount" result-type="long"/>
 
-            <evaluate expression="restaurantTypeDAOImpl.getRestaurantTypeByRestaurantId(restaurant.id)"
-                      result="viewScope.restaurantType" result-type="com.planrest.entities.Restauranttype"/>
-
-            <evaluate expression="restaurantLocationDAOImpl.getRestaurantLocationByRestaurantId(restaurant.id)"
-                      result="viewScope.restaurantLocation" result-type="com.planrest.entities.Restaurantlocation"/>
-
             <evaluate expression="restaurantRatingDAOImpl.getAverageRestaurantRatingByRestaurantId(restaurant.id)"
                       result="viewScope.averageRating" result-type="double"/>
 
@@ -210,7 +198,7 @@ start-state="main">
 
         <transition on="showVisitors">
             <set name="viewScope.restaurantWallId" value="restaurantPage.restaurantWallId"/>
-            <evaluate expression="userDAOImpl.getUsersByRestaurantWallId(restaurantWallId)"
+            <evaluate expression="userDAOImpl.getUserWallsByRestaurantWallId(restaurantWallId)"
                       result="viewScope.restaurantWallUsers"/>
             <evaluate expression="restaurantWallService.splitDialog()"/>
             <!--<render fragments="restaurantPostsForm:splitDialog"/>-->

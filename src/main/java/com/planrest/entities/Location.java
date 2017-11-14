@@ -5,11 +5,12 @@ import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
-public class Userlocation implements Serializable {
+public class Location implements Serializable {
     private static final long serialVersionUID = 1L;
     private int id;
     private String locationName;
-    private Collection<UserUserlocation> userUserlocationsById;
+    private Collection<Restaurant> restaurantsById;
+    private Collection<User> usersById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -36,7 +37,7 @@ public class Userlocation implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Userlocation that = (Userlocation) o;
+        Location that = (Location) o;
 
         if (id != that.id) return false;
         if (locationName != null ? !locationName.equals(that.locationName) : that.locationName != null) return false;
@@ -52,11 +53,20 @@ public class Userlocation implements Serializable {
     }
 
     @OneToMany(mappedBy = "locationId")
-    public Collection<UserUserlocation> getUserUserlocationsById() {
-        return userUserlocationsById;
+    public Collection<Restaurant> getRestaurantsById() {
+        return restaurantsById;
     }
 
-    public void setUserUserlocationsById(Collection<UserUserlocation> userUserlocationsById) {
-        this.userUserlocationsById = userUserlocationsById;
+    public void setRestaurantsById(Collection<Restaurant> restaurantsById) {
+        this.restaurantsById = restaurantsById;
+    }
+
+    @OneToMany(mappedBy = "locationId")
+    public Collection<User> getUsersById() {
+        return usersById;
+    }
+
+    public void setUsersById(Collection<User> usersById) {
+        this.usersById = usersById;
     }
 }

@@ -1,11 +1,10 @@
 package com.planrest.services;
 
-import com.planrest.dao.impl.RestaurantLocationDAOImpl;
-import com.planrest.dao.interfaces.RestaurantLocationDAO;
+import com.planrest.dao.interfaces.LocationDAO;
 import com.planrest.dao.interfaces.RestaurantRatingDAO;
 import com.planrest.dao.interfaces.RestaurantTypeDAO;
 import com.planrest.entities.Restaurant;
-import com.planrest.entities.Restaurantlocation;
+import com.planrest.entities.Location;
 import com.planrest.entities.Restauranttype;
 import com.planrest.objects.RestaurantSearchComponent;
 import org.hibernate.Session;
@@ -28,7 +27,7 @@ public class RestaurantSearchService {
     private RestaurantSearchComponent restaurantSearchComponent;
 
     @Autowired
-    private RestaurantLocationDAO restaurantLocationDAO;
+    private LocationDAO locationDAO;
 
     @Autowired
     private RestaurantTypeDAO restaurantTypeDAO;
@@ -36,27 +35,6 @@ public class RestaurantSearchService {
     @Autowired
     private RestaurantRatingDAO restaurantRatingDAO;
 
-    @Transactional
-    public List<Restauranttype> getTypesByRestaurants(List<Restaurant> restaurants){
-        List<Restauranttype> restaurantTypes = new ArrayList<>();
-
-        for (Restaurant r: restaurants) {
-            restaurantTypes.add(restaurantTypeDAO.getRestaurantTypeByRestaurantId(r.getId()));
-        }
-
-        return restaurantTypes;
-    }
-
-    @Transactional
-    public List<Restaurantlocation> getLocationsByRestaurants(List<Restaurant> restaurants){
-        List<Restaurantlocation> restaurantTypes = new ArrayList<>();
-
-        for (Restaurant r: restaurants) {
-            restaurantTypes.add(restaurantLocationDAO.getRestaurantLocationByRestaurantId(r.getId()));
-        }
-
-        return restaurantTypes;
-    }
 
     @Transactional
     public List<Double> getAverageRestaurantRating(List<Restaurant> restaurants){
@@ -74,13 +52,9 @@ public class RestaurantSearchService {
         Session session = sessionFactory.getCurrentSession();
         Query query = session
                 .createQuery("SELECT r FROM Restaurant r " +
-                        "INNER JOIN RestaurantRestaurantlocation rrl ON r.id = rrl.restaurantId.id " +
-                        "INNER JOIN Restaurantlocation rl ON rrl.restaurantLocationId.id = rl.id " +
-                        "INNER JOIN RestaurantRestauranttype rrt ON r.id = rrt.restaurantId.id " +
-                        "INNER JOIN Restauranttype rt ON rrt.restaurantTypeId.id = rt.id " +
                         "WHERE r.name LIKE :name " +
-                        "AND rl.locationName LIKE :locationName " +
-                        "AND rt.typeName LIKE :typeName ");
+                        "AND r.locationId.locationName LIKE :locationName " +
+                        "AND restaurantTypeId.typeName LIKE :typeName ");
 
         query.setParameter("name", "%" + name + "%");
         if (location.equals("<all locations>")) {
@@ -130,14 +104,14 @@ public class RestaurantSearchService {
     public List<String> getAllLocations(){
         List<String> list = new ArrayList<>();
         list.add("<all locations>");
-        list.addAll(restaurantLocationDAO.getAllRestaurantLocations());
+        list.addAll(locationDAO.getAllLocationNames());
         return list;
     }
 
     public List<String> getAllTypes(){
         List<String> list = new ArrayList<>();
         list.add("<all types>");
-        list.addAll(restaurantTypeDAO.getAllRestaurantTypes());
+        list.addAll(restaurantTypeDAO.getAllRestaurantTypeNames());
         return list;
     }
 

@@ -9,8 +9,8 @@ public class Dialogue implements Serializable {
     private static final long serialVersionUID = 1L;
     private int id;
     private User userCompanionId;
+    private User userId;
     private Collection<Message> messagesById;
-    private Collection<UserDialogue> userDialoguesById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -32,6 +32,16 @@ public class Dialogue implements Serializable {
         this.userCompanionId = userByUserCompanionId;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+    public User getUserId() {
+        return userId;
+    }
+
+    public void setUserId(User userId) {
+        this.userId = userId;
+    }
+
     @OneToMany(mappedBy = "dialogueId")
     public Collection<Message> getMessagesById() {
         return messagesById;
@@ -41,14 +51,6 @@ public class Dialogue implements Serializable {
         this.messagesById = messagesById;
     }
 
-    @OneToMany(mappedBy = "dialogueId")
-    public Collection<UserDialogue> getUserDialoguesById() {
-        return userDialoguesById;
-    }
-
-    public void setUserDialoguesById(Collection<UserDialogue> userDialoguesById) {
-        this.userDialoguesById = userDialoguesById;
-    }
 
     @Override
     public boolean equals(Object o) {

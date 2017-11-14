@@ -3,7 +3,7 @@ package com.planrest.objects;
 import com.planrest.entities.Restaurant;
 import com.planrest.entities.Restaurantwall;
 import com.planrest.entities.User;
-import com.planrest.entities.UserwallRestaurantwall;
+import com.planrest.entities.Userwall;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -15,7 +15,7 @@ public class RestaurantPageComponent implements Serializable{
 
     private User user;
     private Restaurant restaurant;
-    private List<UserwallRestaurantwall> userwallRestaurantwalls;
+    private List<Userwall> userwallRestaurantwalls;
     private Restaurantwall restaurantRepostingWall;
     private List<byte[]> restaurantWallImages;
     private String repostComment = "";
@@ -38,11 +38,11 @@ public class RestaurantPageComponent implements Serializable{
         this.restaurant = restaurant;
     }
 
-    public List<UserwallRestaurantwall> getUserwallRestaurantwalls() {
+    public List<Userwall> getUserwallRestaurantwalls() {
         return userwallRestaurantwalls;
     }
 
-    public void setUserwallRestaurantwalls(List<UserwallRestaurantwall> userwallRestaurantwalls) {
+    public void setUserwallRestaurantwalls(List<Userwall> userwallRestaurantwalls) {
         this.userwallRestaurantwalls = userwallRestaurantwalls;
     }
 

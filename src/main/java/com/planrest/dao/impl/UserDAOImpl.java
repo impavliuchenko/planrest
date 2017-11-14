@@ -31,11 +31,10 @@ public class UserDAOImpl extends CrudDAOImpl<User, Integer> implements Serializa
     }
 
     @Override
-    public List<User> getUsersByRestaurantWallId(int id) {
+    public List<User> getUserWallsByRestaurantWallId(int id) {
         Query query = sessionFactory.getCurrentSession()
-                .createQuery("SELECT u FROM RestaurantwallUser rwu " +
-                        "INNER JOIN rwu.userId u " +
-                        "INNER JOIN rwu.restaurantWallId rw " +
+                .createQuery("SELECT uw FROM Userwall uw " +
+                        "INNER JOIN uw.restaurantWallId rw " +
                         "WHERE rw.id = :id");
         query.setParameter("id", id);
 
@@ -45,10 +44,9 @@ public class UserDAOImpl extends CrudDAOImpl<User, Integer> implements Serializa
     @Override
     public List<User> getVisitorsByRestaurantId(int id) {
         Query query = sessionFactory.getCurrentSession()
-                .createQuery("SELECT DISTINCT u FROM RestaurantwallUser rwu " +
-                        "INNER JOIN rwu.restaurantWallId rw " +
+                .createQuery("SELECT DISTINCT uw.userId FROM Userwall uw " +
+                        "INNER JOIN uw.restaurantWallId rw " +
                         "INNER JOIN rw.restaurantId r " +
-                        "INNER JOIN rwu.userId u " +
                         "WHERE r.id = :id ");
         query.setParameter("id", id);
         return (List<User>) query.list();

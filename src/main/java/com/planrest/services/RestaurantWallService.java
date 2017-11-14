@@ -1,7 +1,6 @@
 package com.planrest.services;
 
 import com.planrest.entities.Restaurantwall;
-import com.planrest.entities.UserwallRestaurantwall;
 import com.planrest.objects.RestaurantPageComponent;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

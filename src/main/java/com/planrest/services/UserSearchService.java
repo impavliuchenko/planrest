@@ -1,10 +1,9 @@
 package com.planrest.services;
 
-import com.planrest.dao.interfaces.UserLocationDAO;
+import com.planrest.dao.interfaces.LocationDAO;
 import com.planrest.dao.interfaces.UserRatingDAO;
 
 import com.planrest.entities.User;
-import com.planrest.entities.Userlocation;
 import com.planrest.objects.UserSearchComponent;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -26,21 +25,12 @@ public class UserSearchService {
     private UserSearchComponent userSearchComponent;
 
     @Autowired
-    private UserLocationDAO userLocationDAO;
+    private LocationDAO locationDAO;
 
     @Autowired
     private UserRatingDAO userRatingDAO;
 
-    @Transactional
-    public List<Userlocation> getLocationsByUsers(List<User> users){
-        List<Userlocation> userLocations = new ArrayList<>();
 
-        for (User u: users) {
-            userLocations.add(userLocationDAO.getUserLocationByUserId(u.getId()));
-        }
-
-        return userLocations;
-    }
 
     @Transactional
     public List<Double> getAverageUserRating(List<User> users){
@@ -58,10 +48,8 @@ public class UserSearchService {
         Session session = sessionFactory.getCurrentSession();
         Query query = session
                 .createQuery("SELECT u FROM User u " +
-                        "INNER JOIN UserUserlocation uul ON u.id = uul.userId.id " +
-                        "INNER JOIN Userlocation ul ON uul.locationId.id = ul.id " +
                         "WHERE u.name LIKE :name " +
-                        "AND ul.locationName LIKE :locationName ");
+                        "AND u.locationId.locationName LIKE :locationName ");
 
         query.setParameter("name", "%" + name + "%");
         if (location.equals("<all locations>")) {
@@ -111,7 +99,7 @@ public class UserSearchService {
     public List<String> getAllLocations(){
         List<String> list = new ArrayList<>();
         list.add("<all locations>");
-        list.addAll(userLocationDAO.getAllUserLocations());
+        list.addAll(locationDAO.getAllLocationNames());
         return list;
     }
 
