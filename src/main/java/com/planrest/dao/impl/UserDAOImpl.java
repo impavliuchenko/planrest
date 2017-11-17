@@ -17,8 +17,10 @@ public class UserDAOImpl extends CrudDAOImpl<User, Integer> implements Serializa
 
     @Override
     public User getUserByLogin(String login){
-        return (User) sessionFactory.getCurrentSession()
-                .createQuery("FROM User u WHERE u.login LIKE login").uniqueResult();
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("FROM User u WHERE u.login LIKE :login");
+        query.setParameter("login", login);
+        return (User) query.uniqueResult();
     }
 
     @Override

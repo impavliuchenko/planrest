@@ -208,7 +208,6 @@ public class User implements Serializable {
     }
 
     @OneToMany(mappedBy = "userId")
-    @LazyCollection(LazyCollectionOption.FALSE)
     public Collection<Userwall> getUserwallsById() {
         return userwallsById;
     }

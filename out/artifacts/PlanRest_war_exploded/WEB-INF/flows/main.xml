@@ -9,10 +9,9 @@ start-state="main">
         <var name="userPage" class="com.planrest.objects.UserPageComponent"/>
 
         <on-entry>
-            <evaluate expression="userDAOImpl.readUniqueById(1)"
-                      result="viewScope.user" result-type="com.planrest.entities.User"/>
+            <evaluate expression="authorizationService.getUserByLogin()" result="viewScope.user"/>
             <set name="userPageComponent.user" value="user"/>
-            <set name="conversationScope.userName" value="user"/>
+            <set name="conversationScope.userName" value="user.name"/>
 
             <evaluate expression="userDAOImpl.getFriendsByUserId(user.id)"
                       result="viewScope.allFriends"/>
