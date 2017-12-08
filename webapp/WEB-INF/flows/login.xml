@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd"
+start-state="login">
+
+    <view-state id="login" view="/WEB-INF/views/login.xhtml">
+        <transition on="toUserRegistration" to="userRegistration"/>
+    </view-state>
+
+    <view-state id="userRegistration" view="/WEB-INF/views/userRegistration.xhtml">
+        <on-entry>
+            <evaluate expression="registrationService.createEmptyUser()" result="viewScope.user"/>
+            <evaluate expression="registrationService.getAllLocations()" result="viewScope.allLocations"/>
+        </on-entry>
+
+        <transition on="create" to="login">
+            <set name="viewScope.location" value="registrationComponent.selectedLocation"/>
+            <evaluate expression="registrationService.createNewUser(user, location)"/>
+        </transition>
+
+    </view-state>
+
+</flow>

@@ -106,3 +106,12 @@ body {
 .div-login-button table{
     height: 50px;
 }
+
+.div_login_check_in{
+    margin-top: 20px;
+}
+
+.check_in_links{
+    margin-left: 10px;
+    font-size: medium;
+}

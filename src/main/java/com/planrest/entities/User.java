@@ -20,6 +20,7 @@ public class User implements Serializable {
     private String sex;
     private Date birthday;
     private byte[] image;
+    private int enabled;
     private Location locationId;
     private Collection<Dialogue> dialoguesById;
     private Collection<Friend> usersByUserId;
@@ -98,6 +99,16 @@ public class User implements Serializable {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    @Basic
+    @Column(name = "enabled", nullable = false)
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
     }
 
     @Basic

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface LocationDAO extends CrudDAO<Location, Integer> {
     List<String> getAllLocationNames();
+    Location getLocationByLocationName(String locationName);
 }

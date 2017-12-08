@@ -41,8 +41,6 @@
                                users-by-username-query="select u.login as username, u.password as password, u.enabled as enabled from user u where login = ?"
                                authorities-by-username-query="select u.login as username, r.name as authority from user u inner join user_role ur on u.id = ur.user_id
                                                               inner join role r on ur.role_id = r.id where u.login = ?"/>
-
-
         </authentication-provider>
     </authentication-manager>
 
@@ -50,7 +48,7 @@
     <!--Describing our security-->
     <http auto-config="true" use-expressions="true">
 
-        <intercept-url pattern="/app/main" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/app/main" access="hasRole('ROLE_USER')"/>
 
         <form-login
                 login-page="/app/login"
@@ -59,7 +57,7 @@
                 authentication-failure-url="/app/login?login_failed=1"
                 username-parameter="username"
                 password-parameter="password"/>
-        <!--<remember-me key="jsfspring-sec" />-->
+        <!--<remember-me key="jsfspring-sec" data-source-ref="dataDirectSource"/>-->
 
         <logout logout-success-url="/app/login" logout-url="/app/logout"/>
         <csrf disabled="true"/>

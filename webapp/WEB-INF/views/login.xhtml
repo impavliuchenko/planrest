@@ -57,17 +57,21 @@
                     </p:panelGrid>
                 </div>
 
-                <!--<h:selectBooleanCheckbox value="jsfspring-sec" /> Remember Me-->
+                <!--<h:selectBooleanCheckbox id="jsfspring-sec" value="false"  /> Remember Me-->
 
 
             </form>
 
+            <div class="div_login_check_in">
+                <h:form>
+                    <h:commandLink value="Check in as user" action="toUserRegistration" styleClass="check_in_links"/>
+                    <h:commandLink value="Check in as restaurant" action="toRestaurantRegistration" styleClass="check_in_links"/>
+                </h:form>
+            </div>
 
         </div>
 
-
     </h:body>
-
 
 </f:view>
 </html>
